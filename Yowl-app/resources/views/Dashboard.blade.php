@@ -40,10 +40,10 @@
         </div>
       </div>
     </header>
-        <!-- Dashboard -->
+        <!-- my dashboard container -->
     <main class="p-6 overflow-y-auto">
 
-      <!-- Cards -->
+      <!-- information kpi -->
       <h2 class="text-lg font-bold mb-4 text-blue-600">Dashboard</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         <div class="bg-white p-4 rounded-xl shadow">
@@ -68,9 +68,11 @@
         </div>
       </div>
 
-      <!-- Users Table -->
+      <!-- all Users -->
       <h2 class="text-lg font-bold mb-4 text-blue-600">USERS</h2>
+
       <div class="overflow-x-auto bg-white rounded-xl shadow">
+
         <table class="w-full text-left border-collapse">
           <thead>
             <tr class="bg-gray-100 text-gray-600">
