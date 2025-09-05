@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('landing');
-});
+})->name('landing');
+
 Route::get('/Home', function () {
     return view('welcome');
 });
@@ -32,4 +33,12 @@ Route::middleware([
 
 Route::get('/Dash', function(){
     return view('Dashboard');
-});
+})->name('dash');
+
+Route::get('/userDash', function(){
+    return view('useDash');
+})->name('users');
+
+Route::get('/productDash', function(){
+    return view('productDash');
+})->name('products');
