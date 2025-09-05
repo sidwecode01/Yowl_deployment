@@ -8,16 +8,14 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- source https://github.com/spacemadev/Free-blue-star-tailwind-landing-page-template -->
 
-<header class="bg-blue-400 sticky top-0 z-50 px-4">
+<header class="bg-blue-500 shadow-2xl sticky top-0 z-50 px-4">
     <div class="container mx-auto flex justify-between items-center py-4">
-      <!-- Left section: Logo -->
+
       <div class="flex items-center">
-        <img src="../Logo/bluelogo.png" alt="Logo" class="h-14 w-auto mr-4">
+        <img src="../Logo/whiteLogos.png" alt="Logo" class="h-14 w-auto mr-4">
       </div>
 
-      <!-- Hamburger menu (for mobile) -->
       <div class="flex md:hidden">
         <button id="hamburger" class="text-white focus:outline-none">
           <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -26,38 +24,37 @@
         </button>
       </div>
 
-      <!-- Center section: Menu -->
       <nav class="hidden md:flex md:flex-grow justify-center">
         <ul class="flex justify-center space-x-4 text-white">
-          <li><a href="#home" class="hover:text-secondary font-bold">Home</a></li>
+          <li><a href="{{ route('landind') }}" class="hover:text-secondary font-bold">Home</a></li>
         </ul>
       </nav>
 
-      <!-- Right section: Buttons (for desktop) -->
       <div class="hidden lg:flex items-center space-x-4">
-        <a href="#" class="bg-transparent border border-white-600 rounded-xl text-white font-semibold px-4 py-2 inline-block h-9 w-25 text-center">Sign in</a>
-        <a href="#" class="bg-white rounded-xl text-black font-semibold px-4 py-2 inline-block h-9 w-25 text-center pb-6">Sign up</a>
+        <a href="{{ route('login') }}" class="w-35 rounded-xl bg-transparent border border-white px-4 py-2 font-bold text-white text-center">Sign in</a>
+        <a href="{{ route('register') }}" class="w-35 rounded-xl bg-white px-4 py-2 font-bold text-center font-semibold border border-white">Sign up</a>
       </div>
     </div>
   </header>
 
- <!-- Mobile menu -->
-<nav id="mobile-menu-placeholder" class="mobile-menu hidden flex-col items-center space-y-8 md:hidden px-8">
-  <ul class="w-full text-center">
-    <li class="border-b border-gray-300 pb-4 pt-4"><a href="#home" class="hover:text-secondary font-bold">Home</a></li>
-    <li class="border-b border-gray-300 pb-4 pt-4"><a href="#aboutus" class="hover:text-secondary font-bold">About us</a></li>
-    <li class="border-b border-gray-300 pb-4 pt-4"><a href="#results" class="hover:text-secondary font-bold">Results</a></li>
-    <li class="border-b border-gray-300 pb-4 pt-4"><a href="#reviews" class="hover:text-secondary font-bold">Reviews</a></li>
-    <li class="border-b border-gray-300 pb-4 pt-4"><a href="#portfolio" class="hover:text-secondary font-bold">Portfolio</a></li>
-    <li class="border-b border-gray-300 pb-4 pt-4"><a href="#team" class="hover:text-secondary font-bold">Team</a></li>
-    <li class="pb-4 pt-4"><a href="#contact" class="hover:text-secondary font-bold">Contact</a></li>
-  </ul>
-  <div class="flex flex-col mt-6 space-y-2 items-center">
-    <a href="#" class="bg-green-500 hover:bg-blue-500 text-white font-semibold px-4 py-2 rounded inline-block flex items-center justify-center min-w-[110px]">Github</a>
-    <a href="#" class="bg-blue-500 hover:bg-green-500 text-white font-semibold px-4 py-2 rounded inline-block flex items-center justify-center min-w-[110px]">Download</a>
+  <nav id="mobile-menu-placeholder" class="mobile-menu hidden flex-col items-center space-y-8 md:hidden px-8">
+    <ul class="w-full text-center">
+        <li class="border-b border-gray-300 pb-4 pt-4"><a href="#home" class="hover:text-secondary font-bold">Home</a></li>
+    </ul>
+  </nav>
+
+  <div class="flex items-center flex-col justify-center gap-25 p-10">
+    <div class="text-center">
+        <h1 class="animate-typing overflow-hidden pr-5 text-8xl font-bold">
+            Comment on the Web  Share your ideas freely on  YOWL
+        </h1>
+    </div>
+
+    <div class="relative flex items-center justify-center ">
+        <a href=" {{ route('home') }}" class="w-50 animate-bounce rounded-xl bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700 text-center">Get stated</a>
+    </div>
+
   </div>
-</nav>
-
-
 </body>
 </html>
+
