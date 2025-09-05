@@ -30,6 +30,6 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('/Dashboard', function(){
+Route::get('/Dash', function(){
     return view('Dashboard');
 });

@@ -7,7 +7,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css"
+    />
 
 </head>
 <body class="flex h-screen bg-gray-50">
@@ -49,22 +55,27 @@
         <div class="bg-white p-4 rounded-xl shadow">
           <p class="text-gray-600">Customers connected today</p>
           <p class="text-2xl font-bold">+34%</p>
-          <div class="mt-2 h-2 bg-blue-100 rounded"></div>
+          <!-- <div class="mt-2 h-2 bg-blue-100 rounded"></div> -->
+           <canvas id="line-chart" role="img"></canvas>
         </div>
         <div class="bg-white p-4 rounded-xl shadow">
           <p class="text-gray-600">Products</p>
           <p class="text-2xl font-bold">+34%</p>
-          <div class="mt-2 h-2 bg-blue-100 rounded"></div>
+          <!-- <div class="mt-2 h-2 bg-blue-100 rounded"></div> -->
+            <canvas id="line-chart2"  role="img"></canvas>
+           <!-- here -->
         </div>
         <div class="bg-white p-4 rounded-xl shadow">
           <p class="text-gray-600">Customers</p>
           <p class="text-2xl font-bold">86%</p>
-          <div class="mt-2 h-2 bg-blue-100 rounded"></div>
+          <!-- <div class="mt-2 h-2 bg-blue-100 rounded"></div> -->
+           <canvas id="line-chart3"></canvas>
         </div>
         <div class="bg-white p-4 rounded-xl shadow">
           <p class="text-gray-600">Comments</p>
           <p class="text-2xl font-bold">86%</p>
-          <div class="mt-2 h-2 bg-blue-100 rounded"></div>
+          <!-- <div class="mt-2 h-2 bg-blue-100 rounded"></div> -->
+           <canvas id="line-chart4"></canvas>
         </div>
       </div>
 
@@ -95,5 +106,172 @@
     </main>
 
   </div>
+
+   <script>
+    Chart.defaults.global.elements.point.radius = 10
+   </script> 
+
+    <script>
+
+       const courbe1 = document.getElementById('line-chart').getContext("2d");
+       const courbe2 = document.getElementById('line-chart2').getContext("2d");
+       const courbe3 = document.getElementById('line-chart3').getContext("2d");
+       const courbe4 = document.getElementById('line-chart4').getContext("2d");
+
+       const data1 = {
+          
+             labels: [
+               "January",
+               "February",
+               "March",
+               "April",
+               "May",
+               "June",
+               "July",
+             ],
+
+             datasets: [{
+               label: "My First",
+                backgroundColor: "#4c51bf",
+                backgroundColor: 'rgba(63, 172, 245, 0.6)',
+              borderColor: 'rgba(63, 172, 245, 1)',
+              data: [65, 78, 66, 44, 56, 67, 75],
+              fill: true,
+             }]
+         };
+
+
+
+        const data2 = {
+          labels: [
+            "Monday",
+            "Tuesday", 
+            "Wednesday", 
+            "Thursday", 
+            "Friday", 
+            "Saturday",
+            "Sunday"],
+
+            datasets: [{
+              label: "Test",
+              backgroundColor: "rgba(245, 63, 135, 0.1)",
+              borderColor: "rgba(245, 63, 135, 1)",
+             data: [1, 26, 15, 74, 56, 67, 75],
+              fill: true,
+
+            }]
+        };
+
+        const data3 = {
+          labels: [
+            "Monday",
+            "Tuesday", 
+            "Wednesday", 
+            "Thursday", 
+            "Friday", 
+            "Saturday",
+            "Sunday"
+          ],
+          datasets: [{
+            label: "Customers",
+            backgroundColor: 'rgba(47, 214, 135, 0.4)',
+            borderColor: 'rgba(47, 214, 135, 1)',
+            data: [1,2,7,8,3,0,9],
+            fill: true,
+            
+          }]
+        };
+
+        const data4 = {
+          labels: [
+            "Monday",
+            "Tuesday", 
+            "Wednesday", 
+            "Thursday", 
+            "Friday", 
+            "Saturday",
+            "Sunday"
+          ],
+
+          datasets: [{
+            label: '😎 Sidyellow 😎',
+            backgroundColor: 'rgba(249, 102, 14, 0.4)',
+            borderColor: 'rgba(249, 102, 14, 0.67)',
+            data: [1,3,5,8,1,0,9],
+            fill: true,
+
+
+          }]
+        }
+
+
+      // courb1 
+
+
+       const chart = new Chart(courbe1, {
+         type: 'line',
+         data: data1,
+         options: {
+           elements: {
+                 point:{
+                   radius: 5,
+                   backgroundColor: 'rgba(0,0,255, 0.5)',
+                  
+             }
+           } 
+         }
+       });
+
+ 
+        // courbe2
+
+         const  chart2 = new Chart(courbe2 , {
+           type: 'line',
+           data: data2,
+           options: {
+            elements: {
+                  point:{
+                    radius: 5,
+                    backgroundColor: 'rgba(0,0,255, 0.5)',
+                  
+              }
+            } 
+         }
+         });
+
+        //  courbe3
+         const chart3 = new Chart(courbe3, {
+          type: 'line',
+          data: data3,
+            options: {
+            elements: {
+                  point:{
+                    radius: 5,
+                    backgroundColor: 'rgba(0,0,255, 0.5)',
+                  
+              }
+            } 
+         }
+         });
+
+
+        //  courbe4
+
+        const chart4 = new Chart(courbe4, {
+          type: 'line',
+          data: data4,
+          options: {
+            elements: {
+                  point:{
+                    radius: 5,
+                   
+                  
+              }
+            } 
+         }
+
+        })
+
+    </script>
 </body>
 </html>
