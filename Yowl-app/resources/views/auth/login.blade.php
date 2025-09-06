@@ -21,8 +21,7 @@
   </div>
 </header>
 
-<div class="min-h-screen flex items-center justify-center w-full">
-        <div class="max-w-5xl w-full rounded-lg flex flex-col md:flex-row ">
+<div class="min-h-screen flex items-center justify-center bg-gray-100 w-full">
 
 
 
@@ -38,7 +37,6 @@
                 {{ session('status') }}
             </div>
         @endif
-        <div class="w-full md:w-1/2 p-8">
 
             <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 0.5rem;">SIGN IN</h2>
             <p class=" mb-6">More than 150 posts are waiting for your wise comments!</p>
@@ -71,24 +69,16 @@
                     </a>
                 @endif
 
-                <div class="flex items-center justify-end mt-4">
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                    {{ __("Don't have an account?") }}
-                </a>
-            </div>
+
         </div>
         <x-button class="ms-4 bg-indigo-600">
             {{ __('Log in') }}
         </x-button>
         </form>
-        </div>
-        </div>
     </x-authentication-card>
 
-        <div class="w-full h-auto bg-white">
-            <img class=" object-cover"
+            <img class=" w-1/2 object-cover"
          src="../Logo/signin.jpg" alt="Social media" />
-         </div>
          </div>
 
 </x-guest-layout>
