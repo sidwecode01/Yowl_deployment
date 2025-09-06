@@ -1,10 +1,40 @@
 <x-guest-layout>
-    <x-authentication-card>
+
+<header class="bg-white shadow-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a href="/" class="text-2xl font-bold text-blue-600">
+        <img class=" w-full h-16 object-cover"
+     src="../Logo/Logo-removebg-preview - Modifié.png" alt="Yowl">
+         </a>
+      </div>
+
+      <!-- Bouton Login -->
+      <div class="flex items-center">
+        <a href="/login" class="bg-indigo-600 text-white px-4 py-2 rounded">Login</a>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<div class="min-h-screen flex items-center justify-center bg-gray-100 w-full">
+
+
+
+      <x-authentication-card class="">
+
         <x-slot name="logo">
             <x-authentication-card-logo />
         </x-slot>
 
         <x-validation-errors class="mb-4" />
+
+            <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 0.5rem;">SIGN UP</h2>
+            <p class=" mb-6">Social media that you need to express your freedom.</p>
 
         <form method="POST" action="{{ route('register') }}">
             @csrf
@@ -56,10 +86,19 @@
                     {{ __('Already registered?') }}
                 </a>
 
-                <x-button class="ms-4">
+                <x-button class="ms-4 bg-indigo-600">
                     {{ __('Register') }}
                 </x-button>
             </div>
         </form>
+    
     </x-authentication-card>
+
+    
+            <img class=" w-1/2 object-cover "
+         src="../Logo/signup.jpeg" alt="Social media" />
+       
+
+
+</div>
 </x-guest-layout>

@@ -1,4 +1,30 @@
 <x-guest-layout>
+
+<header class="bg-white shadow-md ">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a href="/" class="text-2xl font-bold text-blue-600">
+        <img class=" w-full h-16 object-cover"
+     src="../Logo/Logo-removebg-preview - Modifié.png" alt="Yowl">
+         </a>
+      </div>
+
+      <!-- Bouton Login -->
+      <div class="flex items-center">
+        <a href="/register" class="bg-indigo-600 text-white px-4 py-2 rounded">Register</a>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<div class="min-h-screen flex items-center justify-center bg-gray-100 w-full">
+
+
+
     <x-authentication-card>
         <x-slot name="logo">
             <x-authentication-card-logo />
@@ -11,6 +37,10 @@
                 {{ session('status') }}
             </div>
         @endif
+
+            <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 0.5rem;">SIGN IN</h2>
+            <p class=" mb-6">More than 150 posts are waiting for your wise comments!</p>
+
 
         <form method="POST" action="{{ route('login') }}">
             @csrf
@@ -38,11 +68,21 @@
                         {{ __('Forgot your password?') }}
                     </a>
                 @endif
-
-                <x-button class="ms-4">
-                    {{ __('Log in') }}
-                </x-button>
+<!-- @resources/views/auth/register.blade.php -->
+                <div class="flex items-center justify-end mt-4">
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
+                    {{ __("Don't have an account?") }}
+                </a>
             </div>
+        </div>
+        <x-button class="ms-4 bg-indigo-600">
+            {{ __('Log in') }}
+        </x-button>
         </form>
     </x-authentication-card>
+
+            <img class=" w-1/2 object-cover"
+         src="../Logo/signin.jpg" alt="Social media" />
+         </div>
+
 </x-guest-layout>
