@@ -38,14 +38,11 @@
                 {{ session('status') }}
             </div>
         @endif
-<<<<<<< HEAD
         <div class="w-full md:w-1/2 p-8">
 
             <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 0.5rem;">SIGN IN</h2>
             <p class=" mb-6">More than 150 posts are waiting for your wise comments!</p>
 
-=======
->>>>>>> origin/Home
 
         <form method="POST" action="{{ route('login') }}">
             @csrf
@@ -74,7 +71,6 @@
                     </a>
                 @endif
 
-<<<<<<< HEAD
                 <div class="flex items-center justify-end mt-4">
                     <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
                     {{ __("Don't have an account?") }}
@@ -95,12 +91,4 @@
          </div>
          </div>
 
-=======
-                <x-button class="ms-4">
-                    {{ __('Log in') }}
-                </x-button>
-            </div>
-        </form>
-    </x-authentication-card>
->>>>>>> origin/Home
 </x-guest-layout>

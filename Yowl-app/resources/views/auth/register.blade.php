@@ -34,13 +34,10 @@
 
         <x-validation-errors class="mb-4" />
 
-<<<<<<< HEAD
         <div class="w-full md:w-1/2 p-8">
             <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 0.5rem;">SIGN UP</h2>
             <p class=" mb-6">Social media that you need to express your freedom.</p>
 
-=======
->>>>>>> origin/Home
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
@@ -91,16 +88,11 @@
                     {{ __('Already registered?') }}
                 </a>
 
-<<<<<<< HEAD
                 <x-button class="ms-4 bg-indigo-600">
-=======
-                <x-button class="ms-4">
->>>>>>> origin/Home
                     {{ __('Register') }}
                 </x-button>
             </div>
         </form>
-<<<<<<< HEAD
         </div>
          </div>
     </x-authentication-card>
@@ -112,7 +104,4 @@
 
 
 </div>
-=======
-    </x-authentication-card>
->>>>>>> origin/Home
 </x-guest-layout>
