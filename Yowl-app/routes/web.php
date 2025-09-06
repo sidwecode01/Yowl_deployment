@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsersController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('landing');
-})->name('landind');
+})->name('landing');
+
 Route::get('/Home', function () {
     return view('welcome');
 })->name('home');
@@ -30,6 +33,12 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('/Dash', function(){
-    return view('Dashboard');
-});
+Route::get('/Dash', [UsersController::class , 'index'])->name('dash');
+
+Route::get('/userDash', function(){
+    return view('useDash');
+})->name('users');
+
+Route::get('/productDash', function(){
+    return view('productDash');
+})->name('products');
