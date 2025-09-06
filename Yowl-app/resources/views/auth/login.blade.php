@@ -1,6 +1,6 @@
 <x-guest-layout>
 
-<header class="bg-white shadow-md">
+<header class="bg-white shadow-md ">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
 
@@ -70,7 +70,11 @@
                         {{ __('Forgot your password?') }}
                     </a>
                 @endif
+<<<<<<< HEAD
 
+=======
+<!-- @resources/views/auth/register.blade.php -->
+>>>>>>> origin/test
                 <div class="flex items-center justify-end mt-4">
                     <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
                     {{ __("Don't have an account?") }}

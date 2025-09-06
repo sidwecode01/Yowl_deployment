@@ -30,7 +30,6 @@
 
      <div><a href="{{ route('products') }}"><i class='bx bxs-circle-three-quarter text-2xl text-[clamp(1rem,2vw,2rem)]'></i><span class="mx-4 text-xl text-[clamp(1rem,2vw,2rem)]">Products</span><i class='bx bx-chevron-right text-xl text-[clamp(1rem,2vw,2rem)]' ></i></a></div>
   </div>
-
   <!-- Main  -->
   <div class="flex-1 flex flex-col">
 
@@ -52,30 +51,8 @@
       </div>
     </header>
 
-    <h2 class="text-lg font-bold mb-4 text-blue-600">USERS</h2>
+    <h2 class="text-lg font-bold mb-4 text-blue-600">PRODUCTS</h2>
 
-      <div class="overflow-x-auto bg-white rounded-xl shadow">
-
-        <table class="w-full text-left border-collapse">
-          <thead>
-            <tr class="bg-gray-100 text-gray-600">
-              <th class="px-6 py-3">Username</th>
-              <th class="px-6 py-3">Email</th>
-              <th class="px-6 py-3">Online</th>
-              <th class="px-6 py-3">Is-admin</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="border-t">
-              <td class="px-6 py-3">Sidyellow</td>
-              <td class="px-6 py-3">Sidyellow01@gmail.com</td>
-              <td class="px-6 py-3">yes</td>
-              <td class="px-6 py-3">yes</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </main>
-
-    </body>
+      
+   </body>
 </html>
