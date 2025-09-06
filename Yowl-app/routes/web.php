@@ -42,3 +42,5 @@ Route::get('/userDash', function(){
 Route::get('/productDash', function(){
     return view('productDash');
 })->name('products');
+
+Route::get('/delete/{use}', [UsersController::class , 'delete']);
