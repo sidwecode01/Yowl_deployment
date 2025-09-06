@@ -26,13 +26,13 @@
 
       <nav class="hidden md:flex md:flex-grow justify-center">
         <ul class="flex justify-center space-x-4 text-white">
-          <li><a href="{{ route('landind') }}" class="hover:text-secondary font-bold">Home</a></li>
+          <li><a href="{{ route('landing') }}" class="hover:text-secondary font-bold">Home</a></li>
         </ul>
       </nav>
 
       <div class="hidden lg:flex items-center space-x-4">
         <a href="{{ route('login') }}" class="w-35 rounded-xl bg-transparent border border-white px-4 py-2 font-bold text-white text-center">Sign in</a>
-        <a href="{{ route('register') }}" class="w-35 rounded-xl bg-white px-4 py-2 font-bold text-center font-semibold border border-white">Sign up</a>
+        <a href="{{ route('register') }}" class="w-35 rounded-xl bg-white px-4 py-2 font-bold text-center border border-white">Sign up</a>
       </div>
     </div>
   </header>

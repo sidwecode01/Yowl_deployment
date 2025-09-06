@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\PostController;
 
 
 /*
@@ -39,6 +40,8 @@ Route::get('/userDash', function(){
     return view('useDash');
 })->name('users');
 
-Route::get('/productDash', function(){
-    return view('productDash');
-})->name('products');
+// Route::get('/productDash', function(){
+//     return view('productDash');
+// })->name('products');
+
+Route::get('/productDash', PostController::class .'@index')->name('products');

@@ -43,7 +43,6 @@
           <a href="#" class="hover:text-blue-600">Landing</a>
         </nav>
       </div>
-      {{ allUser }}
       <div class="flex items-center gap-2">
         <img src="../Logo/Logo-removebg-preview - Modifié.png" alt="admin" class="w-8 h-8 rounded-full">
         <div>
@@ -115,7 +114,7 @@
 
    <script>
     Chart.defaults.global.elements.point.radius = 10
-   </script> 
+   </script>
 
     <script>
 
@@ -125,7 +124,7 @@
        const courbe4 = document.getElementById('line-chart4').getContext("2d");
 
        const data1 = {
-          
+
              labels: [
                "January",
                "February",
@@ -151,10 +150,10 @@
         const data2 = {
           labels: [
             "Monday",
-            "Tuesday", 
-            "Wednesday", 
-            "Thursday", 
-            "Friday", 
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
             "Saturday",
             "Sunday"],
 
@@ -171,10 +170,10 @@
         const data3 = {
           labels: [
             "Monday",
-            "Tuesday", 
-            "Wednesday", 
-            "Thursday", 
-            "Friday", 
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
             "Saturday",
             "Sunday"
           ],
@@ -184,17 +183,17 @@
             borderColor: 'rgba(47, 214, 135, 1)',
             data: [1,2,7,8,3,0,9],
             fill: true,
-            
+
           }]
         };
 
         const data4 = {
           labels: [
             "Monday",
-            "Tuesday", 
-            "Wednesday", 
-            "Thursday", 
-            "Friday", 
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
             "Saturday",
             "Sunday"
           ],
@@ -211,7 +210,7 @@
         }
 
 
-      // courb1 
+      // courb1
 
 
        const chart = new Chart(courbe1, {
@@ -222,13 +221,13 @@
                  point:{
                    radius: 5,
                    backgroundColor: 'rgba(0,0,255, 0.5)',
-                  
+
              }
-           } 
+           }
          }
        });
 
- 
+
         // courbe2
 
          const  chart2 = new Chart(courbe2 , {
@@ -239,9 +238,9 @@
                   point:{
                     radius: 5,
                     backgroundColor: 'rgba(0,0,255, 0.5)',
-                  
+
               }
-            } 
+            }
          }
          });
 
@@ -254,9 +253,9 @@
                   point:{
                     radius: 5,
                     backgroundColor: 'rgba(0,0,255, 0.5)',
-                  
+
               }
-            } 
+            }
          }
          });
 
@@ -270,10 +269,10 @@
             elements: {
                   point:{
                     radius: 5,
-                   
-                  
+
+
               }
-            } 
+            }
          }
 
         })
