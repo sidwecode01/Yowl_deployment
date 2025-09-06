@@ -6,131 +6,148 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Home</title>
 
-<nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
-  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-  <a href="/Home" class="flex items-center space-x-3 rtl:space-x-reverse">
-      <img src="../Logo/Logo-removebg-preview - Modifié.png" class="h-14" alt="YOWL">
-  </a>
-  <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-      <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Username</button>
-  </div>
-  <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
-    <ul class="flex flex-col mr-160 p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-      <li>
-        <a href="/Home" class="block py-2 px-3 text-white bg-gray-700 md:bg-transparent md:text-gray-500 hover:text-gray-900 md:p-0 md:dark:text-gray-500" aria-current="page">Home</a>
-      </li>
 
-      <li>
-        <a href="/Home" class="block py-2 px-3 text-white bg-gray-700 md:bg-transparent md:text-gray-500 hover:text-gray-900 md:p-0 md:dark:text-gray-500" aria-current="page">Landing</a>
-      </li>
-
-    </ul>
-  </div>
-  <div>
-  </div>
-  </div>
-</nav>
 
 </head>
 <body>
+
+    <nav class="bg-white fixed w-full z-20 top-0 start-0 border-b border-gray-200 shadow-sm">
+
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+
+        <a href="/Home" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="../Logo/Logo-removebg-preview - Modifié.png" class="h-14" alt="YOWL">
+        </a>
+
+        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Username</button>
+        </div>
+
+        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+            <ul class="flex flex-col mr-160 p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
+                <li>
+                    <a href="/Home" class="block py-2 px-3 text-white bg-gray-700 md:bg-transparent md:text-gray-500 hover:text-gray-900 md:p-0 md:dark:text-gray-500" aria-current="page">Home</a>
+                </li>
+
+                <li>
+                    <a href="/Home" class="block py-2 px-3 text-white bg-gray-700 md:bg-transparent md:text-gray-500 hover:text-gray-900 md:p-0 md:dark:text-gray-500" aria-current="page">Landing</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    </nav>
+
 <!-- navbar vertical -->
-<div class="flex justify-between">
-  <div class="w-70 block max-w-60 pt-5 ml-80 mt-21 h-221 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-<ul class="space-y-1">
-  <li>
-    <a href="#" class="flex hover:border-l-6 block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-blue-100 hover:border-blue-400 hover:text-blue-400">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 mr-1">
-    <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-    </svg>
-    Search
-    </a>
-  </li>
+    <div class="flex justify-between ">
 
-  <p class="px-4 py-2 text-sm font-medium text-gray-500">
-    MENU
-  </p>
+        <div class="w-70 block max-w-60 pt-5 mt-21 h-149 bg-white rounded-lg shadow-xl ">
 
-  <li>
-    <a href="#" class="flex hover:border-l-6 block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-blue-100 hover:border-blue-400 hover:text-blue-400">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 mr-1">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-</svg>
+            <ul class="space-y-1">
 
-      Posts
-    </a>
-  </li>
+                <li>
+                    <a href="#" class="flex hover:border-l-6 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-blue-100 hover:border-blue-400 hover:text-blue-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 mr-1">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                        </svg>
+                        Search
+                    </a>
+                </li>
 
-  <li>
-    <a href="#" class="flex hover:border-l-6 block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-blue-100 hover:border-blue-400 hover:text-blue-400">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 mr-1">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-    </svg>
-    Profile
-    </a>
-  </li>
+                <p class="px-4 py-2 text-sm font-medium text-gray-500">
+                    MENU
+                </p>
 
-  <li>
-    <a href="#" class="flex hover:border-l-6 block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-blue-100 hover:border-blue-400 hover:text-blue-400">
-      <img src="../Logo/dashboard.png" alt="dashboard" class="w-5 mr-1">
-      <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 mr-1">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 0 1-1.125-1.125M3.375 19.5h7.5c.621 0 1.125-.504 1.125-1.125m-9.75 0V5.625m0 12.75v-1.5c0-.621.504-1.125 1.125-1.125m18.375 2.625V5.625m0 12.75c0 .621-.504 1.125-1.125 1.125m1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125m0 3.75h-7.5A1.125 1.125 0 0 1 12 18.375m9.75-12.75c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125m19.5 0v1.5c0 .621-.504 1.125-1.125 1.125M2.25 5.625v1.5c0 .621.504 1.125 1.125 1.125m0 0h17.25m-17.25 0h7.5c.621 0 1.125.504 1.125 1.125M3.375 8.25c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125m17.25-3.75h-7.5c-.621 0-1.125.504-1.125 1.125m8.625-1.125c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h7.5m-7.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125M12 10.875v-1.5m0 1.5c0 .621-.504 1.125-1.125 1.125M12 10.875c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125M13.125 12h7.5m-7.5 0c-.621 0-1.125.504-1.125 1.125M20.625 12c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h7.5M12 14.625v-1.5m0 1.5c0 .621-.504 1.125-1.125 1.125M12 14.625c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125m0 1.5v-1.5m0 0c0-.621.504-1.125 1.125-1.125m0 0h7.5" />
-      </svg> -->
-      Dashboard
-    </a>
-  </li>
-</ul>
-</div>
+                <li>
+                    <a href="#" class="flex hover:border-l-6 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-blue-100 hover:border-blue-400 hover:text-blue-400">
 
-<!-- Post -->
-<div class="h-242 overflow-y-auto scrollbar-w-none gap-none pt-25 grid-columns-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 mr-1">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                        </svg>
+                        Posts
+                    </a>
+                </li>
 
-<div class="mt-5">
-<a href="#" class="block w-160 p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-<p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-</a>
-</div>
+                <li>
+                    <a href="#" class="flex hover:border-l-6 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-blue-100 hover:border-blue-400 hover:text-blue-400">
 
-</div>
-<!-- Post -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 mr-1">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                        </svg>
+                        Profile
+                    </a>
+                </li>
 
+                <li>
+                    <a href="#" class="flex hover:border-l-6 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-blue-100 hover:border-blue-400 hover:text-blue-400">
+                        <img src="../Logo/dashboard.png" alt="dashboard" class="w-5 mr-1">
+                        Dashboard
+                    </a>
+                </li>
+            </ul>
 
-<div class="w-70 p-6 gap-10 border bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 mr-70 h-100 mt-30">
-<div class="h-[10%] flex">
+        </div>
 
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 mr-2">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
-  </svg>
-Must-read posts
-</div><hr class="bg-gray-200">
+        <!-- Post -->
+        <div class="h-140 overflow-y-auto gap-none pt-25 grid-columns-1">
 
-<div class="h-[45%] mt-3">
-  <ul class="text-blue-400 list-disc ml-5">
-    <li><a class="hover:text-blue-600" href="">Lien 1</a></li>
-    <li><a class="hover:text-blue-600" href="">Lien 2</a></li>
-  </ul>
-</div>
+            <div class="mt-5">
 
-<div class="h-[15%] flex">
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 mr-2 mt-3">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
-  </svg>
-  <p class="mt-3.5">Featured Links</p>
-</div><hr>
+                <a href="#" class="block w-160 p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100">
+                    <h5 class="mb-2 text-xl font-bold tracking-tight text-black dark:text-black">Noteworthy technology acquisitions 2021</h5>
+                    <p class="font-normal text-gray-700 dark:text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                </a>
 
-<div class="h-[30%] mt-3">
-  <ul class="text-blue-400 list-disc ml-5">
-    <li><a class="hover:text-blue-600" href="">Lien 1</a></li>
-    <li><a class="hover:text-blue-600" href="">Lien 2</a></li>
-    <li><a class="hover:text-blue-600" href="">Lien 3</a></li>
-  </ul>
-</div>
+            </div>
 
-</div>
+        </div>
+        <!-- Post -->
 
-</div>
+        <div class="w-70 p-6 gap-10 bg-white rounded-lg shadow-sm h-100 mr-10 mt-30">
+
+            <div class="h-[10%] flex">
+
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 mr-2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                </svg>
+                Must-read posts
+            </div>
+            <hr class="bg-gray-200">
+
+            <div class="h-[45%] mt-3">
+
+                <ul class="text-blue-400 list-disc ml-5">
+                    <li><a class="hover:text-blue-600" href="">Lien 1</a></li>
+                    <li><a class="hover:text-blue-600" href="">Lien 2</a></li>
+                </ul>
+
+            </div>
+
+            <div class="h-[15%] flex">
+
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 mr-2 mt-3">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
+                </svg>
+                <p class="mt-3.5">Featured Links</p>
+
+            </div>
+            <hr>
+
+            <div class="h-[30%] mt-3">
+
+                <ul class="text-blue-400 list-disc ml-5">
+                    <li><a class="hover:text-blue-600" href="">Lien 1</a></li>
+                    <li><a class="hover:text-blue-600" href="">Lien 2</a></li>
+                    <li><a class="hover:text-blue-600" href="">Lien 3</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
 <!-- navbar vertical -->
-
 
 </body>
 </html>
