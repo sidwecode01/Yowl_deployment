@@ -43,7 +43,7 @@
           <a href="#" class="hover:text-blue-600">Landing</a>
         </nav>
       </div>
-      {{ allUser }}
+      
       <div class="flex items-center gap-2">
         <img src="../Logo/Logo-removebg-preview - Modifié.png" alt="admin" class="w-8 h-8 rounded-full">
         <div>
