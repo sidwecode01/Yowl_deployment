@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsersController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,9 +33,7 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('/Dash', function(){
-    return view('Dashboard');
-})->name('dash');
+Route::get('/Dash', [UsersController::class , 'index'])->name('dash');
 
 Route::get('/userDash', function(){
     return view('useDash');
