@@ -75,21 +75,25 @@
                   <td class="px-6 py-3">
                     <button command="show-modal" commandfor="dialog" class="rounded-xl px-4 py-2 hover:text-green-700 text-blue-600 text-center"><i class="fa-solid fa-eye"></i></button>
                     <el-dialog>
-                        <dialog id="dialog" aria-labelledby="dialog-title" class="fixed inset-0 size-auto max-h-none max-w-none overflow-y-auto bg-transparent backdrop:bg-transparent">
+                        <dialog id="dialog" aria-labelledby="dialog-title" class="fixed inset-0 size-auto h-500 max-w-none overflow-y-auto bg-transparent backdrop:bg-transparent ">
                             <el-dialog-backdrop class="fixed inset-0 bg-gray-900/50 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in"></el-dialog-backdrop>
 
                             <div tabindex="0" class="flex min-h-full items-end justify-center p-4 text-center focus:outline-none sm:items-center sm:p-0">
-                            <el-dialog-panel class="relative transform overflow-hidden rounded-lg bg-gray-800 text-left shadow-xl outline -outline-offset-1 outline-white/10 transition-all data-closed:translate-y-4 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in sm:my-8 sm:w-full sm:max-w-lg data-closed:sm:translate-y-0 data-closed:sm:scale-95">
-                                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                                    <div>{{ $post->chemin_image }}</div>
-                                    <div>{{ $post->title }}</div>
-                                    <div>{{ $post->description }}</div>
-                                    <div>
-                                        
-                                    </div>
+                            <el-dialog-panel class="relative transform overflow-hidden rounded-lg bg-white w-80 text-left shadow-xl outline -outline-offset-1 outline-white/10 transition-all data-closed:translate-y-4 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in sm:my-8 sm:w-full sm:max-w-lg data-closed:sm:translate-y-0 data-closed:sm:scale-95">
+                                <div class="px-4 pt-5 pb-4 sm:p-6 sm:pb-4 h-80">
+                                    <img src="./Logo/signup.jpeg" alt="">
+                                </div>
+                                <div class="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                                    {{ $post->title }}
+                                </div>
+                                <div class="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                                    {{ $post->description }}
+                                </div>
+                                <div class="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                                    <a href="{{ $post->posts_url }}">{{ $post->posts_url }}</a>
                                 </div>
 
-                                <div class="bg-white px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                                <div class="bg-white px-4 w-80 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                                     <button type="button" command="close" commandfor="dialog" class="inline-flex w-full justify-center rounded-md bg-red-500 px-3 py-2 text-sm font-semibold text-white hover:bg-red-400 sm:ml-3 sm:w-auto">Cancel</button>
                                 </div>
                             </el-dialog-panel>
