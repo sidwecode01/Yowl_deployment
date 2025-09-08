@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\PostController; 
-// use App\Http\Controllers\postController;
+// use App\Http\Controllers\CommentController;
 
 
 /*
@@ -20,6 +20,10 @@ use App\Http\Controllers\PostController;
 Route::get('/', function () {
     return view('landing');
 })->name('landing');
+
+Route::get('/page', function () {
+    return view('comment');
+})->name('comment');
 
 Route::get('/Home', [PostController::class, 'index'])->name('home');
 Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
@@ -45,4 +49,4 @@ Route::get('/productDash', function(){
 })->name('products');
 
 
-// Route::get('/Dash', [postController::class , 'poster']);
+// Route::post('/commentAdd', CommentController::class . '@store')->name('comment.store');

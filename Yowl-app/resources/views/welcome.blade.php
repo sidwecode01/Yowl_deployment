@@ -134,7 +134,8 @@
 
 
 @foreach($posts as $post)
-    <div class="bg-white shadow rounded-lg p-4 mb-4">
+    <div href="/page" class="bg-white shadow rounded-lg p-4 mb-4">
+      <!-- <a href="/page">yo</a> -->
         <a  target="_blank" class="font-bold text-lg text-blue-600">
             {{ $post->title }}
         </a><br>
