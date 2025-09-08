@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use Illuminate\Support\Collection;
+
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
+
 
 class UsersController extends Controller
 {
@@ -20,7 +25,6 @@ class UsersController extends Controller
             $online = 'Yes';
         }
 
-        
         return view('useDash', ['allUser'=>$allUser , 'online'=> $online]);
     }
 
@@ -31,6 +35,22 @@ class UsersController extends Controller
     }
 
     public function indexDash(){
+            
+        //  $usersPerDay = DB::table('sessions')->get()
+        //  ->where('payload', 'not like', '%user_id%"%') 
+        //  ->where('last_activity', '>', Carbon::now()->subDay()->toDateTimeString())  //Filtrer pour les dernières 24 heures
+        //  ->selectRaw('DATE(last_activity) as date, COUNT(DISTINCT user_id) as user_count')  //Compter les utilisateurs uniques par jour
+        //  ->groupBy('date')
+        //  ->orderBy('date', 'asc')
+        //  ->get();
+
+        //  dd($usersPerDay);
+
+        // $userDate = DB::table('sessions')->get();
+        // dd($userDate);
+
+
+
         $users = User::orderBy('last_active_at', 'DESC')->get();
         return view('Dashboard' , compact('users'));
     }
