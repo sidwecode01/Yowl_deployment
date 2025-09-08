@@ -56,7 +56,7 @@
 
       <div class="overflow-x-auto bg-white rounded-xl shadow">
 
-        <table class="w-full text-left border-collapse">
+        <!-- <table class="w-full text-left border-collapse">
           <thead>
             <tr class="bg-gray-100 text-gray-600">
               <th class="px-6 py-3">Username</th>
@@ -72,6 +72,35 @@
               <td class="px-6 py-3">yes</td>
               <td class="px-6 py-3">yes</td>
             </tr>
+          </tbody>
+        </table> -->
+
+
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-gray-100 text-gray-600">
+              <th class="px-6 py-3">Username</th>
+              <th class="px-6 py-3">Email</th>
+              <th class="px-6 py-3">Online</th>
+              <th class="px-6 py-3">Is-admin</th>
+              <!-- <th class="px-6 py-3 bg-blue-400 text-white">SEE MORE</th> -->
+
+              <!-- <th class="px-6 py-3 bg-green-400 text-white">EDIT</th> -->
+              <th class="px-6 py-3 bg-red-400 text-white ">DELETE</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach($allUser as $user)
+            <tr class="border-t">
+              <td class="px-6 py-3">{{$user->name}}</td>
+              <td class="px-6 py-3">{{$user->email}}</td>
+              <td class="px-6 py-3">yes</td>
+              <td class="px-6 py-3">{{$online}}</td>
+              <!-- <td class="px-6 py-3 text-center"><button class="text-3xl text-blue-500 w-10 h-10 rounded-xl " ><i class='bx bx-show'></i></button></td> -->
+              <!-- <td class="px-6 py-3 text-center"><button command="show-modal" commandfor="dialog" class="text-3xl text-green-500 w-10 h-10 rounded-xl " ><i class='bx bxs-edit-alt'></i></button></td> -->
+              <td class="px-6 py-3 text-center"><a href="delete/{{$user->id}}"><button class="text-3xl text-red-500 w-10 h-10 rounded-xl " ><i class='bx bx-trash'></i></button></a></td>
+            </tr>
+            @endforeach
           </tbody>
         </table>
       </div>

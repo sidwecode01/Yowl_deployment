@@ -28,19 +28,25 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    // Route::get('/dashboard', function () {
+    //     return view('dashboard');
+    // })->name('dashboard');
+    Route::get('/Dash', function () {
+            return view('Dashboard')->name('dash');
+    });
+
+    Route::get('/userDash', [UsersController::class , 'index']
+    )->name('users');
+
+        Route::get('/productDash', function(){
+        return view('productDash');
+    })->name('products');
+
+    Route::get('/delete/{use}', [UsersController::class , 'delete']);
 });
 
-Route::get('/Dash', [UsersController::class , 'index'])->name('dash');
 
-Route::get('/userDash', function(){
-    return view('useDash');
-})->name('users');
 
-Route::get('/productDash', function(){
-    return view('productDash');
-})->name('products');
 
-Route::get('/delete/{use}', [UsersController::class , 'delete']);
+
+

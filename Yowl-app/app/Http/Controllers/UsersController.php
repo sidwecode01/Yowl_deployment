@@ -21,13 +21,18 @@ class UsersController extends Controller
         }
 
         
-        return view('Dashboard', ['allUser'=>$allUser , 'online'=> $online]);
+        return view('useDash', ['allUser'=>$allUser , 'online'=> $online]);
     }
 
     public function delete(User $use){
         $oneUse = User::find($use)->first();
         $oneUse->delete();
         return redirect('/Dash')->with('status' , 'Delete successfull');
+    }
+
+    public function indexDash(){
+        $users = User::orderBy('last_active_at', 'DESC')->get();
+        return view('Dashboard' , compact('users'));
     }
 
    
