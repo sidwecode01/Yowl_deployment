@@ -23,7 +23,13 @@ class UpdateLastActivity
         //     Auth::user()->last_active_at = Carbon::now();
         //     Auth::user()->save();
         // }
-        User::where('id', Auth::user()->id)->update(['last_active_at'=> now()]);
+        if(Auth::check()){
+
+            User::where('id', Auth::user()->id)->update(['last_active_at' => now()]);
+           
+            
+        }
+        
         return $next($request);
     }
 }

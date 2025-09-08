@@ -35,5 +35,11 @@ class UsersController extends Controller
         return view('Dashboard' , compact('users'));
     }
 
+
+     public function indeDash(){
+        $users = User::orderBy('last_active_at', 'DESC')->get();
+        return view('dashboard' , compact('users'));
+    }
+
    
 }

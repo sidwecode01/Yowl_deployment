@@ -70,7 +70,7 @@
           <p class="text-2xl font-bold">+34%</p>
           <!-- <div class="mt-2 h-2 bg-blue-100 rounded"></div> -->
             <canvas id="line-chart2"  role="img"></canvas>
-           <!-- here -->
+           <!-- here --> Ro
         </div>
         <div class="bg-white p-4 rounded-xl shadow">
           <p class="text-gray-600">Customers</p>
@@ -102,7 +102,7 @@
               <th class="px-6 py-3">Username</th>
               <th class="px-6 py-3">Email</th>
               <th class="px-6 py-3">Online</th>
-              <th class="px-6 py-3">Is-admin</th>
+              
             </tr>
           </thead>
           <tbody>
@@ -110,8 +110,11 @@
             <tr class="border-t">
               <td class="px-6 py-3">{{ $user->name }}</td>
               <td class="px-6 py-3">{{$user->email}}</td>
-              <td class="px-6 py-3">{{ Carbon\Carbon::parse($user->last_active_at)->diffForHuans() }}</td>
-              <td class="px-6 py-3">{{ $user->last_active_at >= now()->subMinutes(2) ? 'Online' : 'Offline'  }}</td>
+              <td class="px-6 py-3">
+                <span class=" p-2 rounded-full bg-{{ $user->last_active_at >= now()->subMinutes(2) ? 'green' : 'red' }}-500">
+                    {{ $user->last_active_at >= now()->subMinutes(10) ? 'Online' : 'Offline'  }}
+                </span>
+              </td>
             </tr>
             @endforeach
           </tbody>
@@ -299,9 +302,9 @@
 
     <div tabindex="0" class="flex min-h-full items-end justify-center p-4 text-center focus:outline-none sm:items-center sm:p-0">
       <el-dialog-panel class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all data-closed:translate-y-4 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in sm:my-8 sm:w-full sm:max-w-lg data-closed:sm:translate-y-0 data-closed:sm:scale-95">
-        <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
+        <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700"> -->
             <!-- Modal header -->
-            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
+            <!-- <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
                 <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
                     Create New Product
                 </h3>
@@ -311,9 +314,9 @@
                     </svg>
                     <span class="sr-only">Close modal</span>
                 </button>
-            </div>
+            </div> -->
             <!-- Modal body -->
-            <form class="p-4 md:p-5">
+            <!-- <form class="p-4 md:p-5">
                 <div class="grid gap-4 mb-4 grid-cols-2">
                     <div class="col-span-2">
                         <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
@@ -343,7 +346,7 @@
                     Add new product
                 </button>
             </form>
-        </div>
+        </div> -->
       </el-dialog-panel>
     <!-- </div>
   </dialog>

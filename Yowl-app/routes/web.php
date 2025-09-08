@@ -28,12 +28,12 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    // Route::get('/dashboard', function () {
-    //     return view('dashboard');
-    // })->name('dashboard');
-    Route::get('/Dash', function () {
-            return view('Dashboard')->name('dash');
-    });
+    Route::get('/dashboard', [UsersController::class , 'indeDash']
+    )->name('dashboard');
+    
+    Route::get('/Dash', [UsersController::class , 'indexDash']
+            
+    )->name('dash');
 
     Route::get('/userDash', [UsersController::class , 'index']
     )->name('users');
