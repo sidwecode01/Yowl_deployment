@@ -102,7 +102,7 @@
               <th class="px-6 py-3">Username</th>
               <th class="px-6 py-3">Email</th>
               <th class="px-6 py-3">Online</th>
-              
+
             </tr>
           </thead>
           <tbody>
@@ -126,7 +126,7 @@
 
    <script>
     Chart.defaults.global.elements.point.radius = 10
-   </script> 
+   </script>
 
     <script>
 
@@ -136,13 +136,13 @@
        const courbe4 = document.getElementById('line-chart4').getContext("2d");
 
        const data1 = {
-          
+
              labels: [
             "Monday",
-            "Tuesday", 
-            "Wednesday", 
-            "Thursday", 
-            "Friday", 
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
             "Saturday",
             "Sunday"],
 
@@ -152,6 +152,7 @@
                 backgroundColor: 'rgba(63, 172, 245, 0.6)',
               borderColor: 'rgba(63, 172, 245, 1)',
               data: [65, 78, 66, 44, 56, 67, 75],
+              data: @json($usersPerDay),
               fill: true,
              }]
          };
@@ -161,10 +162,10 @@
         const data2 = {
           labels: [
             "Monday",
-            "Tuesday", 
-            "Wednesday", 
-            "Thursday", 
-            "Friday", 
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
             "Saturday",
             "Sunday"],
 
@@ -181,10 +182,10 @@
         const data3 = {
           labels: [
             "Monday",
-            "Tuesday", 
-            "Wednesday", 
-            "Thursday", 
-            "Friday", 
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
             "Saturday",
             "Sunday"
           ],
@@ -194,17 +195,17 @@
             borderColor: 'rgba(47, 214, 135, 1)',
             data: [1,2,7,8,3,0,9],
             fill: true,
-            
+
           }]
         };
 
         const data4 = {
           labels: [
             "Monday",
-            "Tuesday", 
-            "Wednesday", 
-            "Thursday", 
-            "Friday", 
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
             "Saturday",
             "Sunday"
           ],
@@ -221,7 +222,7 @@
         }
 
 
-      // courb1 
+      // courb1
 
 
        const chart = new Chart(courbe1, {
@@ -232,13 +233,13 @@
                  point:{
                    radius: 5,
                    backgroundColor: 'rgba(0,0,255, 0.5)',
-                  
+
              }
-           } 
+           }
          }
        });
 
- 
+
         // courbe2
 
          const  chart2 = new Chart(courbe2 , {
@@ -249,9 +250,9 @@
                   point:{
                     radius: 5,
                     backgroundColor: 'rgba(0,0,255, 0.5)',
-                  
+
               }
-            } 
+            }
          }
          });
 
@@ -264,9 +265,9 @@
                   point:{
                     radius: 5,
                     backgroundColor: 'rgba(0,0,255, 0.5)',
-                  
+
               }
-            } 
+            }
          }
          });
 
@@ -280,20 +281,22 @@
             elements: {
                   point:{
                     radius: 5,
-                   
-                  
+
+
               }
-            } 
+            }
          }
 
         })
 
     </script>
 
+    
+
 
 
         <!-- Include this script tag or install `@tailwindplus/elements` via npm: -->
- <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script> 
+ <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
 
 <el-dialog>
   <dialog id="dialog" aria-labelledby="dialog-title" class="fixed inset-0 size-auto max-h-none max-w-none overflow-y-auto bg-transparent backdrop:bg-transparent">
@@ -337,7 +340,7 @@
                     </div>
                     <div class="col-span-2">
                         <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Description</label>
-                        <textarea id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write product description here"></textarea>                    
+                        <textarea id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write product description here"></textarea>
                     </div>
                 </div>
                 <button type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">

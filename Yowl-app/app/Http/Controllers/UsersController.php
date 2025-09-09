@@ -35,24 +35,26 @@ class UsersController extends Controller
     }
 
     public function indexDash(){
-            
-        //  $usersPerDay = DB::table('sessions')->get()
-        //  ->where('payload', 'not like', '%user_id%"%') 
-        //  ->where('last_activity', '>', Carbon::now()->subDay()->toDateTimeString())  //Filtrer pour les dernières 24 heures
-        //  ->selectRaw('DATE(last_activity) as date, COUNT(DISTINCT user_id) as user_count')  //Compter les utilisateurs uniques par jour
-        //  ->groupBy('date')
-        //  ->orderBy('date', 'asc')
-        //  ->get();
+    $usersPerDay = DB::table('sessions')
+    ->selectRaw('DATE(FROM_UNIXTIME(last_activity)) as date, COUNT(DISTINCT user_id) as user_count')
+    ->whereNotNull('user_id')
+    ->where('last_activity', '>', Carbon::now()->subDays(7)->timestamp)
+    ->groupBy(DB::raw('DATE(FROM_UNIXTIME(last_activity))'))
+    ->orderBy('date', 'asc')
+    ->get();
 
-        //  dd($usersPerDay);
+       $data = [];
 
-        // $userDate = DB::table('sessions')->get();
-        // dd($userDate);
+foreach ($usersPerDay as $day) {
+    $data[] = $day->user_count;
+}
+
+
 
 
 
         $users = User::orderBy('last_active_at', 'DESC')->get();
-        return view('Dashboard' , compact('users'));
+        return view('Dashboard' , ['users'=> $users , 'usersPerDay'=>$data]);
     }
 
 
@@ -61,5 +63,5 @@ class UsersController extends Controller
         return view('dashboard' , compact('users'));
     }
 
-   
+
 }
