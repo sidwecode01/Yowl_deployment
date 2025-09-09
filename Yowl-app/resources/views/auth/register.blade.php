@@ -22,7 +22,6 @@
 </header>
 
 <div class="min-h-screen flex items-center justify-center bg-gray-100 w-full">
-    <div class="max-w-5xl w-full bg-white shadow-lg rounded-lg flex flex-col md:flex-row ">
 
 
 
@@ -34,7 +33,6 @@
 
         <x-validation-errors class="mb-4" />
 
-        <div class="w-full md:w-1/2 p-8">
             <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 0.5rem;">SIGN UP</h2>
             <p class=" mb-6">Social media that you need to express your freedom.</p>
 
@@ -93,14 +91,13 @@
                 </x-button>
             </div>
         </form>
-        </div>
-         </div>
+    
     </x-authentication-card>
 
-    <div class="w-full h-auto">
-            <img class=" object-cover"
+    
+            <img class=" w-1/2 object-cover "
          src="../Logo/signup.jpeg" alt="Social media" />
-         </div>
+       
 
 
 </div>

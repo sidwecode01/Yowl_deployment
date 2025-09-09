@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\PostController; 
+// use App\Http\Controllers\postController;
 
 
 /*
@@ -19,9 +21,8 @@ Route::get('/', function () {
     return view('landing');
 })->name('landing');
 
-Route::get('/Home', function () {
-    return view('welcome');
-});
+Route::get('/Home', [PostController::class, 'index'])->name('home');
+Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 
 Route::middleware([
     'auth:sanctum',
@@ -37,16 +38,12 @@ Route::middleware([
 
     Route::get('/userDash', [UsersController::class , 'index']
     )->name('users');
-
-        Route::get('/productDash', function(){
-        return view('productDash');
-    })->name('products');
-
-    Route::get('/delete/{use}', [UsersController::class , 'delete']);
 });
 
+// Route::get('/productDash', function(){
+//     return view('productDash');
+// })->name('products');
 
+Route::get('/productDash', PostController::class .'@indexDash')->name('products');
 
-
-
-
+// Route::get('/productDash/{post}', PostController::class .'@show')->name('products');

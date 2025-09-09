@@ -70,7 +70,7 @@
           <p class="text-2xl font-bold">+34%</p>
           <!-- <div class="mt-2 h-2 bg-blue-100 rounded"></div> -->
             <canvas id="line-chart2"  role="img"></canvas>
-           <!-- here --> Ro
+           <!-- here --> 
         </div>
         <div class="bg-white p-4 rounded-xl shadow">
           <p class="text-gray-600">Customers</p>
