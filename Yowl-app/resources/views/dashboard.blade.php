@@ -1,8 +1,11 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }} 
+            {{ __('Dashboard') }}
         </h2>
+        <!-- <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Dashboard') }}
+        </h2> -->
     </x-slot>
 
     <!-- <div class="overflow-x-auto bg-white rounded-xl shadow">
@@ -26,7 +29,7 @@
                 <span class="p-2 rounded-full bg-{{ $user->last_active_at <= now()->subMinutes(2) ? 'green' : 'red' }}-500">
                     {{ $user->last_active_at <= now()->subMinutes(2) ? 'Online' : 'Offline'  }}
                 </span>
-                
+
               </td>
             </tr>
             @endforeach

@@ -46,7 +46,7 @@
   <div class="flex items-center flex-col justify-center gap-25 p-10">
     <div class="text-center">
         <h1 class="animate-typing overflow-hidden pr-5 text-8xl font-bold">
-            Comment on the Web  Share your ideas freely on  YOWL
+            Comment on the Web <br> Share your ideas freely on <br> YOWL
         </h1>
     </div>
 
