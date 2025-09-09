@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    https://www.online-convert.com/fr/result#j=aa57d55d-64e7-4440-b9cc-b05acd15312c
     <title>Home</title>
 
   <!-- Header -->
@@ -38,7 +38,7 @@
 <body>
 <!-- navbar vertical -->
 <div class="flex justify-between">
-  <div class="w-70 block max-w-60 pt-5 ml-80 mt-21 h-221 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+  <div class="w-70 md:50 block max-w-60 md:max-w-50 pt-5 ml-80 md:ml-2 mt-21 h-221 md:h-150 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
 <ul class="space-y-1">
   <li>
     <a href="#" class="flex hover:border-l-6 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-blue-100 hover:border-blue-400 hover:text-blue-400">
@@ -135,7 +135,7 @@
 
 
 @foreach($posts as $post)
-    <div href="/page" class="bg-white shadow rounded-lg p-4 mb-4 w-180">
+    <div href="/page" class="bg-gray-200 border b-gray-5 shadow rounded-lg p-4 mb-4 w-180 md:w-140">
 
       <!-- <a href="/page">yo</a> -->
         <a  target="_blank" class="font-bold text-lg text-blue-600">
@@ -188,7 +188,7 @@
 <!-- Post -->
 
 
-<div class="w-70 p-6 gap-10 border bg-white border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 mr-70 h-100 mt-30">
+<div class="w-70 p-6 gap-10 border bg-white border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 mr-70 md:mr-2 h-100 mt-30 md:mt-25">
 <div class="h-[10%] flex">
 
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 mr-2">
