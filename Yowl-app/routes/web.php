@@ -44,6 +44,6 @@ Route::get('/userDash', function(){
 //     return view('productDash');
 // })->name('products');
 
-Route::get('/productDash', PostController::class .'@index')->name('products');
+Route::get('/productDash', PostController::class .'@indexDash')->name('products');
 
 // Route::get('/productDash/{post}', PostController::class .'@show')->name('products');

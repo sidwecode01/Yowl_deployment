@@ -17,6 +17,21 @@ class PostController extends Controller
         return view('welcome', compact('posts'));
     }
 
+    public function indexDash()
+    {
+        $posts = Post::all();
+        return view('productDash', compact('posts'));
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        $post = Post::find($id);
+        return view('productDash', compact('post'));
+    }
+
      public function store(Request $request)
     {
         $request->validate([

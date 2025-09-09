@@ -69,8 +69,8 @@
           <tbody>
             @foreach($posts as $post)
                <tr class="border-t">
-                  <td class="px-6 py-3">{{ $post->title }}</td>
-                  <td class="px-6 py-3"><a href="{{ $post->posts_url }}">{{ $post->posts_url }}</a></td>
+                  <td class="px-6 py-3"><strong>{{ $post->title }}</strong></td>
+                  <td class="px-6 py-3"><a class="text-blue-500" href="{{ $post->url }}">{{ $post->url }}</a></td>
                   <td class="px-6 py-3"></td>
                   <td class="px-6 py-3">
                     <button command="show-modal" commandfor="dialog" class="rounded-xl px-4 py-2 hover:text-green-700 text-blue-600 text-center"><i class="fa-solid fa-eye"></i></button>
@@ -81,16 +81,14 @@
                             <div tabindex="0" class="flex min-h-full items-end justify-center p-4 text-center focus:outline-none sm:items-center sm:p-0">
                             <el-dialog-panel class="relative transform overflow-hidden rounded-lg bg-white w-80 text-left shadow-xl outline -outline-offset-1 outline-white/10 transition-all data-closed:translate-y-4 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in sm:my-8 sm:w-full sm:max-w-lg data-closed:sm:translate-y-0 data-closed:sm:scale-95">
                                 <div class="px-4 pt-5 pb-4 sm:p-6 sm:pb-4 h-80">
-                                    <img src="./Logo/signup.jpeg" alt="">
+                                    <img src="{{ $post->image }}" alt="">
                                 </div>
-                                <div class="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                                    {{ $post->title }}
+                                <div class="px-4 pb-4 sm:p-6 sm:pb-4">
+                                    <strong>{{ $post->title }}</strong>
                                 </div>
+                           
                                 <div class="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                                    {{ $post->description }}
-                                </div>
-                                <div class="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                                    <a href="{{ $post->posts_url }}">{{ $post->posts_url }}</a>
+                                    <a class="text-blue-500" href="{{ $post->url }}">{{ $post->url }}</a>
                                 </div>
 
                                 <div class="bg-white px-4 w-80 py-3 sm:flex sm:flex-row-reverse sm:px-6">
