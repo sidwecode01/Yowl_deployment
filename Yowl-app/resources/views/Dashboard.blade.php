@@ -147,11 +147,11 @@
             "Sunday"],
 
              datasets: [{
-               label: "My First",
+               label: "Users",
                 backgroundColor: "#4c51bf",
                 backgroundColor: 'rgba(63, 172, 245, 0.6)',
               borderColor: 'rgba(63, 172, 245, 1)',
-              data: [65, 78, 66, 44, 56, 67, 75],
+              // data: [65, 78, 66, 44, 56, 67, 75],
               data: @json($usersPerDay),
               fill: true,
              }]
