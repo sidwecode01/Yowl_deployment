@@ -47,14 +47,16 @@
 <div class="flex justify-between">
   <div class="w-70 block max-w-60 pt-5 ml-80 mt-21 h-221 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
 <ul class="space-y-1">
-  <li>
+  <!-- <li>
     <a href="#" class="flex hover:border-l-6 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-blue-100 hover:border-blue-400 hover:text-blue-400">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 mr-1">
     <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
     </svg>
     Search
     </a>
-  </li>
+  </li> -->
+
+
 
   <p class="px-4 py-2 text-sm font-medium text-gray-500">
     MENU
@@ -62,6 +64,7 @@
 
   <li>
     <button command="show-modal" commandfor="dialog" class="cursor-pointer flex w-60 hover:border-l-6 block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-blue-100 hover:border-blue-400 hover:text-blue-400">
+    <button command="show-modal" commandfor="dialog" class="flex hover:border-l-6 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-blue-100 hover:border-blue-400 hover:text-blue-400">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
 
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 mr-1">
@@ -136,12 +139,21 @@
 <!-- Post -->
 <div class="h-242 overflow-y-auto scrollbar-w-none gap-none pt-25 grid-columns-1">
 
-<!-- <div class="mt-5">
-<a href="#" class="block w-160 p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-<p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-</a>
-</div> -->
+
+
+<!-- Barre de recherche -->
+<div class="mb-6 flex justify-center">
+    <form action="{{ route('home') }}" method="GET" class="flex w-full max-w-md">
+        <input type="text" name="q" value="{{ request('q') }}"
+               class="w-full border rounded-l-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+               placeholder="Search posts by title, description or author...">
+        <button type="submit"
+                class="bg-blue-600 text-white px-4 py-2 rounded-r-lg hover:bg-blue-700">
+            Search
+        </button>
+    </form>
+</div>
+
 
 
 @foreach($posts as $post)
@@ -259,4 +271,5 @@ Must read
 
 
 </body>
+
 </html>

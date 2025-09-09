@@ -58,19 +58,12 @@ Route::middleware([
 
     Route::get('/userDash', [UsersController::class , 'index']
     )->name('users');
-
-        Route::get('/productDash', function(){
-        return view('productDash');
-    })->name('products');
-
-    Route::get('/delete/{use}', [UsersController::class , 'delete']);
 });
 
+// Route::get('/productDash', function(){
+//     return view('productDash');
+// })->name('products');
 
+Route::get('/productDash', PostController::class .'@indexDash')->name('products');
 
-Route::get('/productDash', function(){
-    return view('productDash');
-})->name('products');
-
-
-// Route::post('/commentAdd', CommentController::class . '@store')->name('comment.store');
+// Route::get('/productDash/{post}', PostController::class .'@show')->name('products');

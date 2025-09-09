@@ -26,7 +26,7 @@
 
       <nav class="hidden md:flex md:flex-grow justify-center">
         <ul class="flex justify-center space-x-4 text-white">
-          <li><a href="/" class="hover:text-secondary font-bold">Home</a></li>
+          <li><a href="{{ route('landing') }}" class="hover:text-secondary font-bold">Home</a></li>
         </ul>
       </nav>
 

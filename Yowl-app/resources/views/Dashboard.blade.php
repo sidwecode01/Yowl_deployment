@@ -45,7 +45,6 @@
           <a href="#" class="hover:text-blue-600">Landing</a>
         </nav>
       </div>
-      
       <div class="flex items-center gap-2">
         <img src="../Logo/Logo-removebg-preview - Modifié.png" alt="admin" class="w-8 h-8 rounded-full">
         <div>
@@ -71,7 +70,7 @@
           <p class="text-2xl font-bold">+34%</p>
           <!-- <div class="mt-2 h-2 bg-blue-100 rounded"></div> -->
             <canvas id="line-chart2"  role="img"></canvas>
-           <!-- here --> Ro
+           <!-- here -->
         </div>
         <div class="bg-white p-4 rounded-xl shadow">
           <p class="text-gray-600">Customers</p>
@@ -212,7 +211,7 @@
           ],
 
           datasets: [{
-            label: '😎 Sidyellow 😎',
+            label: 'Sidyellow',
             backgroundColor: 'rgba(249, 102, 14, 0.4)',
             borderColor: 'rgba(249, 102, 14, 0.67)',
             data: [1,3,5,8,1,0,9],
@@ -292,7 +291,7 @@
 
     </script>
 
-    
+
 
 
 
