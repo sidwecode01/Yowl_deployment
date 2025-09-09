@@ -73,7 +73,10 @@
                   <td class="px-6 py-3"><a class="text-blue-500" href="{{ $post->url }}">{{ $post->url }}</a></td>
                   <td class="px-6 py-3"></td>
                   <td class="px-6 py-3">
-                    <button command="show-modal" commandfor="dialog" class="rounded-xl px-4 py-2 hover:text-green-700 text-blue-600 text-center"><i class="fa-solid fa-eye"></i></button>
+                    <button command="show-modal" commandfor="dialog" class="rounded-xl px-4 py-2 hover:text-green-700 text-blue-600 text-center">
+                      <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+                      <i class="fa-solid fa-eye"></i>
+                  </button>
                     <el-dialog>
                         <dialog id="dialog" aria-labelledby="dialog-title" class="fixed inset-0 size-auto h-500 max-w-none overflow-y-auto bg-transparent backdrop:bg-transparent ">
                             <el-dialog-backdrop class="fixed inset-0 bg-gray-900/50 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in"></el-dialog-backdrop>

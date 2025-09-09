@@ -51,7 +51,7 @@
   </p>
 
   <li>
-    <button command="show-modal" commandfor="dialog" class="flex hover:border-l-6 block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-blue-100 hover:border-blue-400 hover:text-blue-400">
+    <button command="show-modal" commandfor="dialog" class="flex hover:border-l-6 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-blue-100 hover:border-blue-400 hover:text-blue-400">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
 
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 mr-1">
