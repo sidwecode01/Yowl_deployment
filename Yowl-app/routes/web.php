@@ -21,12 +21,24 @@ Route::get('/', function () {
     return view('landing');
 })->name('landing');
 
+Route::get('/userDashboard/{id}', [PostController::class, 'userPost'])->name('userDashboard');
+
+Route::delete('/delete/{post}', [PostController::class, 'delete'])->name('posts.destroy');
+
+// Route::get('/userDashboard', function () {
+//     return view('userDashboard');
+// })->name('userDashboard');
+
+
+
 Route::get('/page', function () {
     return view('comment');
 })->name('comment');
 
 Route::get('/Home', [PostController::class, 'index'])->name('home');
 Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+
+Route::put('/update/{post}', [PostController::class, 'update'])->name('posts.update');
 
 Route::middleware([
     'auth:sanctum',
