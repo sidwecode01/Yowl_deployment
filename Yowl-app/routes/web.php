@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\PostController; 
+// use App\Http\Controllers\postController;
 
 
 /*
@@ -20,9 +21,8 @@ Route::get('/', function () {
     return view('landing');
 })->name('landing');
 
-Route::get('/Home', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/Home', [PostController::class, 'index'])->name('home');
+Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 
 Route::middleware([
     'auth:sanctum',

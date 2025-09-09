@@ -21,8 +21,7 @@
   </div>
 </header>
 
-<div class="min-h-screen flex items-center justify-center w-full">
-        <div class="max-w-5xl w-full rounded-lg flex flex-col md:flex-row ">
+<div class="min-h-screen flex items-center justify-center bg-gray-100 w-full">
 
 
 
@@ -38,7 +37,6 @@
                 {{ session('status') }}
             </div>
         @endif
-        <div class="w-full md:w-1/2 p-8">
 
             <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 0.5rem;">SIGN IN</h2>
             <p class=" mb-6">More than 150 posts are waiting for your wise comments!</p>
@@ -85,14 +83,10 @@
             {{ __('Log in') }}
         </x-button>
         </form>
-        </div>
-        </div>
     </x-authentication-card>
 
-        <div class="w-full h-auto bg-white">
-            <img class=" object-cover"
+            <img class=" w-1/2 object-cover"
          src="../Logo/signin.jpg" alt="Social media" />
-         </div>
          </div>
 
 </x-guest-layout>
