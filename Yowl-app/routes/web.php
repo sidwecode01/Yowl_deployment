@@ -22,6 +22,16 @@ Route::get('/', function () {
     return view('landing');
 })->name('landing');
 
+Route::get('/userDashboard/{id}', [PostController::class, 'userPost'])->name('userDashboard');
+
+Route::delete('/delete/{post}', [PostController::class, 'delete'])->name('posts.destroy');
+
+// Route::get('/userDashboard', function () {
+//     return view('userDashboard');
+// })->name('userDashboard');
+
+
+
 Route::get('/page', function () {
     return view('comment');
 })->name('comment');
@@ -31,6 +41,8 @@ Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
 Route::post('/posts/{post}/comments', [CommentController::class, 'store'])->name('comments.store');
 Route::delete('/delete/{id}', [CommentController::class, 'destroy'])->name('comments.destroy');
+
+Route::put('/update/{post}', [PostController::class, 'update'])->name('posts.update');
 
 Route::middleware([
     'auth:sanctum',
