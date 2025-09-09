@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Comment;
 use App\Helpers\UrlPreview;
 use Illuminate\Http\Request;
+
 
 class PostController extends Controller
 {
@@ -37,5 +39,13 @@ class PostController extends Controller
         return redirect()->back()->with('success', 'Post created');
     }
 
+
+    public function show(Post $post)
+{
+    // Charge les commentair
+    $post->load('comments.user');
+
+    return view('posts.show', compact('post'));
+}
 
 }

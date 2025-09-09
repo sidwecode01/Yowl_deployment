@@ -91,13 +91,13 @@
                 </x-button>
             </div>
         </form>
-    
+
     </x-authentication-card>
 
-    
+
             <img class=" w-1/2 object-cover "
          src="../Logo/signup.jpeg" alt="Social media" />
-       
+
 
 
 </div>

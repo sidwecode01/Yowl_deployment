@@ -134,25 +134,34 @@
 
 
 @foreach($posts as $post)
-    <div href="/page" class="bg-white shadow rounded-lg p-4 mb-4">
-      <!-- <a href="/page">yo</a> -->
-        <a  target="_blank" class="font-bold text-lg text-blue-600">
+    <div  class="bg-white shadow rounded-lg p-4 mb-4">
+        <a href="{{ route('posts.show', $post) }}" target="_blank" class="font-bold text-lg text-blue-600">
             {{ $post->title }}
         </a><br>
         @if($post->image)
+        <a href="{{ route('posts.show', $post) }}">
             <img src="{{ $post->image }}" alt="preview" class="w-full h-48 object-cover rounded mt-2">
+            </a>
         @endif
-        <a href="{{ $post->url }}" class=" underline mt-4">
+        <a href="{{ $post->url }}" class=" text-blue-600 underline mt-4">
             {{ $post->url }}
       </a><br>
+      <p class=" mt-3">Author:
+        <span class=" text-xl font-semibold text-red-400">
+        {{ $post->user->name }}
+        </span></p>
+
+        <p class=" text-gray-500">{{ $post->created_at->diffForHumans() }}</p>
+
           <div class="flex justify-end mt-2">
-        <button command="show-modal" commandfor="comments" class="flex items-center font-bold cursor-pointer">
+        <button
+        command="show-modal" commandfor="comments" class="flex items-center font-bold cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
             </svg>
             <p class="">0</p>
         </button>
-        
+
 <el-dialog>
   <dialog id="comments" aria-labelledby="comments-title" class="fixed inset-0 size-auto max-h-none max-w-none overflow-y-auto bg-transparent backdrop:bg-transparent">
     <el-dialog-backdrop class="fixed inset-0 bg-gray-500/75 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in"></el-dialog-backdrop>
@@ -164,15 +173,30 @@
             <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
               <h3 id="comments-title" class="text-base font-semibold text-gray-900">Comment</h3>
               <div class="mt-2">
-                <textarea class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pb-10.5 pr-55 pl-2 pl-2"></textarea>
+
+
+            @auth
+         <form action="{{ route('comments.store', $post) }}" method="POST" class="mt-4">
+            @csrf
+                <textarea name="content"
+                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pb-10.5 pr-55 pl-2 "required></textarea>
               </div>
             </div>
           </div>
         </div>
         <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-          <button type="button" command="close" commandfor="comments" class="cursor-pointer inline-flex w-full justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-green-500 sm:ml-3 sm:w-auto">Submit</button>
-          <button type="button" command="close" commandfor="comments" class="cursor-pointer mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-xs inset-ring inset-ring-gray-300 hover:bg-red-700 hover:text-white sm:mt-0 sm:w-auto">Cancel</button>
+          <button type="submit" class="cursor-pointer inline-flex w-full justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-green-500 sm:ml-3 sm:w-auto">Submit</button>
+          <button type="button" command="close" commandfor="comments" class="cursor-pointer mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-xs inset-ring inset-ring-gray-300 hover:bg-gray-500 hover:text-white sm:mt-0 sm:w-auto">Cancel</button>
         </div>
+        </form>
+
+          @else
+                <p class="text-gray-500 mt-4">
+                    <a href="{{ route('login') }}" class="text-blue-600 underline">Connect your Account</a> for comment.
+                </p>
+            @endauth
+
+
       </el-dialog-panel>
     </div>
   </dialog>
