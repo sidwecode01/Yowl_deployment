@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
-use App\Http\Controllers\PostController; 
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\CommentController;
 // use App\Http\Controllers\CommentController;
 
 
@@ -37,6 +38,10 @@ Route::get('/page', function () {
 
 Route::get('/Home', [PostController::class, 'index'])->name('home');
 Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
+Route::post('/posts/{post}/comments', [CommentController::class, 'store'])->name('comments.store');
+
+// Route::delete('/delete/{id}', [CommentController::class, 'destroy'])->name('comments.destroy');
 
 Route::put('/update/{post}', [PostController::class, 'update'])->name('posts.update');
 
@@ -45,20 +50,21 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [UsersController::class , 'indeDash']
+    )->name('dashboard');
+
+    Route::get('/Dash', [UsersController::class , 'indexDash']
+
+    )->name('dash');
+
+    Route::get('/userDash', [UsersController::class , 'index']
+    )->name('users');
 });
 
-Route::get('/Dash', [UsersController::class , 'index'])->name('dash');
+// Route::get('/productDash', function(){
+//     return view('productDash');
+// })->name('products');
 
-Route::get('/userDash', function(){
-    return view('useDash');
-})->name('users');
+Route::get('/productDash', PostController::class .'@indexDash')->name('products');
 
-Route::get('/productDash', function(){
-    return view('productDash');
-})->name('products');
-
-
-// Route::post('/commentAdd', CommentController::class . '@store')->name('comment.store');
+// Route::get('/productDash/{post}', PostController::class .'@show')->name('products');
