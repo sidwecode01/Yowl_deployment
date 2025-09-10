@@ -167,9 +167,7 @@
                     readable English.
                   </p>
                   <p>
-                    There are many variations of passages of Lorem Ipsum
-                    available, but the majority have in some form, by injected
-                    humour.
+                  cd 
                   </p>
                 </div>
 
