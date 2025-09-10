@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Favicons -->
+  <link href="/Yowl-app/public/Logo/bluelogo2.png" rel="icon">
+  <link href="/Yowl-app/public/Logo/bluelogo2.png" rel="apple-touch-icon">
     https://www.online-convert.com/fr/result#j=aa57d55d-64e7-4440-b9cc-b05acd15312c
     <title>Home</title>
 
@@ -15,19 +19,18 @@
 
 <body>
 <!-- navbar vertical -->
-<!--   -->
 <div class="flex flex-col md:flex-row justify-between">
-  <div class="hidden md:block md:w-70 md:max-w-60 md:pt-5 md:ml-80 md:mt-21 md:h-221 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+  <div class="hidden lg:shadow-gray-400 md:shadow-gray-400 md:block md:w-40 md:max-w-60 md:pt-5 md:ml-5 md:mt-21 md:h-221 lg:block lg:w-70 lg:max-w-60 lg:pt-2 lg:ml-70 lg:mt-14 lg:h-221 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
     <ul class="space-y-1">
-      <p class="px-4 py-2 text-sm font-medium text-gray-500">
+      <p class="px-4 py-2 md:text-sm lg:text-lg font-medium text-gray-500">
         MENU
       </p>
 
       <li>
-        <button command="show-modal" commandfor="dialog" class="flex hover:border-l-6 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-blue-100 hover:border-blue-400 hover:text-blue-400">
+        <button command="show-modal" commandfor="dialog" class="cursor-pointer flex lg:w-60 hover:border-l-6 px-4 py-2 md:text-sm lg:text-lg font-medium text-gray-900 hover:bg-blue-100 hover:border-blue-400 hover:text-blue-400">
         <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
 
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 mr-1">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 mr-1 mt-1">
           <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
           </svg>
 
@@ -75,8 +78,8 @@
 
       <li>
         @auth
-        <a href="user/profile" class="flex hover:border-l-6 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-blue-100 hover:border-blue-400 hover:text-blue-400">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 mr-1">
+        <a href="user/profile" class="flex hover:border-l-6 px-4 py-2 md:text-sm lg:text-lg font-medium text-gray-900 hover:bg-blue-100 hover:border-blue-400 hover:text-blue-400">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 mr-1 mt-1">
         <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
         </svg>
         Profile
@@ -86,8 +89,8 @@
 
       <li>
          @auth
-        <a href="/userDashboard/{{$user->id}}" class="flex hover:border-l-6 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-blue-100 hover:border-blue-400 hover:text-blue-400">
-          <img src="../Logo/dashboard.png" alt="dashboard" class="w-5 mr-1">
+        <a href="/userDashboard/{{$user->id}}" class="flex hover:border-l-6 px-4 py-2 md:text-sm lg:text-lg font-medium text-gray-900 hover:bg-blue-100 hover:border-blue-400 hover:text-blue-400">
+          <img src="../Logo/dashboard.png" alt="dashboard" class="w-5 mr-1 mt-1">
           Dashboard
         </a>
         @endauth
@@ -108,15 +111,17 @@
             </button>
         </form>
     </div>
+    <!-- Bar de recherche -->
 
+    <!-- POSTS -->
     @foreach($posts as $post)
-        <div class="bg-white shadow rounded-lg p-4 mb-4 w-150 md:w-100 max-w-full">
-            <a href="{{ route('posts.show', $post) }}" target="_blank" class="font-bold text-lg text-blue-600">
+        <div class="bg-white shadow rounded-lg p-4 mb-4 lg:w-200 md:w-100 lg:ml-10 lg:shadow-gray-400 md:shadow-gray-400 hover:shadow-blue-800 transition delay-150 duration-1000 ease-in-out hover:scale-105">
+            <a href="{{ route('posts.show', $post) }}" target="_blank" class="font-bold md:text-lg lg:text-2xl text-blue-600 line-clamp-1">
                 {{ $post->title }}
             </a><br>
             @if($post->image)
             <a href="{{ route('posts.show', $post) }}">
-                <img src="{{ $post->image }}" alt="preview" class="w-full h-48 object-cover rounded mt-2">
+                <img src="{{ $post->image }}" alt="preview" class="lg:w-full lg:h-50 object-cover rounded mt-2">
                 </a>
             @endif
             <a href="{{ $post->url }}" class=" text-blue-600 underline mt-4 line-clamp-2">
@@ -161,7 +166,7 @@
 
             <button
             command="show-modal" commandfor="comments" class="flex items-center font-bold cursor-pointer">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="md:size-5 lg:size-7">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
                 </svg>
                 <p class="">0</p>
@@ -212,7 +217,7 @@
     @endforeach
 
   </div>
-  <div class="hidden md:block md:w-70 md:p-6 md:gap-10 border bg-white border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 md:mr-70 md:h-100 md:mt-30">
+  <div class="hidden md:block md:w-50 md:p-6 md:gap-10 border bg-white border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 lg:mr-60 lg:mt-25 md:mr-5 md:h-80 md:mt-35">
     <div class="h-[10%] flex">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 mr-2">
       <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
