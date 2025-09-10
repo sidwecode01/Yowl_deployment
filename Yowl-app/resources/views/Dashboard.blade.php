@@ -10,6 +10,8 @@
   <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
   <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css"
@@ -46,7 +48,7 @@
       <div class="flex items-center gap-2">
         <img src="../Logo/Logo-removebg-preview - Modifié.png" alt="admin" class="w-8 h-8 rounded-full">
         <div>
-          <p class="text-sm font-semibold">Sidyellow</p>
+          <p class="text-sm font-semibold">{{ auth()->user()->name }}</p>
           <p class="text-xs text-gray-500">Admin</p>
         </div>
       </div>
@@ -84,6 +86,11 @@
         </div>
       </div>
 
+        @if (session("status"))
+                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                        {{ session("status") }}
+                    </div>
+            @endif
       <!-- all Users -->
       <h2 class="text-lg font-bold mb-4 text-blue-600">USERS</h2>
 
@@ -95,16 +102,21 @@
               <th class="px-6 py-3">Username</th>
               <th class="px-6 py-3">Email</th>
               <th class="px-6 py-3">Online</th>
-              <th class="px-6 py-3">Is-admin</th>
+
             </tr>
           </thead>
           <tbody>
+            @foreach($users as $user)
             <tr class="border-t">
-              <td class="px-6 py-3">Sidyellow</td>
-              <td class="px-6 py-3">Sidyellow01@gmail.com</td>
-              <td class="px-6 py-3">yes</td>
-              <td class="px-6 py-3">yes</td>
+              <td class="px-6 py-3">{{ $user->name }}</td>
+              <td class="px-6 py-3">{{$user->email}}</td>
+              <td class="px-6 py-3">
+                <span class=" p-2 rounded-full bg-{{ $user->last_active_at >= now()->subMinutes(2) ? 'green' : 'red' }}-500">
+                    {{ $user->last_active_at >= now()->subMinutes(10) ? 'Online' : 'Offline'  }}
+                </span>
+              </td>
             </tr>
+            @endforeach
           </tbody>
         </table>
       </div>
@@ -126,21 +138,21 @@
        const data1 = {
 
              labels: [
-               "January",
-               "February",
-               "March",
-               "April",
-               "May",
-               "June",
-               "July",
-             ],
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"],
 
              datasets: [{
-               label: "My First",
+               label: "Users",
                 backgroundColor: "#4c51bf",
                 backgroundColor: 'rgba(63, 172, 245, 0.6)',
               borderColor: 'rgba(63, 172, 245, 1)',
-              data: [65, 78, 66, 44, 56, 67, 75],
+              // data: [65, 78, 66, 44, 56, 67, 75],
+              data: @json($usersPerDay),
               fill: true,
              }]
          };
@@ -167,7 +179,7 @@
             }]
         };
 
-        const data3 = {https://www.youtube.com/watch?v=kcFBZxVTmBU
+        const data3 = {
           labels: [
             "Monday",
             "Tuesday",
@@ -199,7 +211,7 @@
           ],
 
           datasets: [{
-            label: '😎 Sidyellow 😎',
+            label: 'Sidyellow',
             backgroundColor: 'rgba(249, 102, 14, 0.4)',
             borderColor: 'rgba(249, 102, 14, 0.67)',
             data: [1,3,5,8,1,0,9],
@@ -278,5 +290,72 @@
         })
 
     </script>
+
+
+
+
+
+        <!-- Include this script tag or install `@tailwindplus/elements` via npm: -->
+ <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+
+<el-dialog>
+  <dialog id="dialog" aria-labelledby="dialog-title" class="fixed inset-0 size-auto max-h-none max-w-none overflow-y-auto bg-transparent backdrop:bg-transparent">
+    <el-dialog-backdrop class="fixed inset-0 bg-gray-500/75 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in"></el-dialog-backdrop>
+
+    <div tabindex="0" class="flex min-h-full items-end justify-center p-4 text-center focus:outline-none sm:items-center sm:p-0">
+      <el-dialog-panel class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all data-closed:translate-y-4 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in sm:my-8 sm:w-full sm:max-w-lg data-closed:sm:translate-y-0 data-closed:sm:scale-95">
+        <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700"> -->
+            <!-- Modal header -->
+            <!-- <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                    Create New Product
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="crud-modal">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div> -->
+            <!-- Modal body -->
+            <!-- <form class="p-4 md:p-5">
+                <div class="grid gap-4 mb-4 grid-cols-2">
+                    <div class="col-span-2">
+                        <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+                        <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type product name" required="">
+                    </div>
+                    <div class="col-span-2 sm:col-span-1">
+                        <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price</label>
+                        <input type="number" name="price" id="price" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="$2999" required="">
+                    </div>
+                    <div class="col-span-2 sm:col-span-1">
+                        <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category</label>
+                        <select id="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                            <option selected="">Select category</option>
+                            <option value="TV">TV/Monitors</option>
+                            <option value="PC">PC</option>
+                            <option value="GA">Gaming/Console</option>
+                            <option value="PH">Phones</option>
+                        </select>
+                    </div>
+                    <div class="col-span-2">
+                        <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Description</label>
+                        <textarea id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write product description here"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
+                    Add new product
+                </button>
+            </form>
+        </div> -->
+      </el-dialog-panel>
+    <!-- </div>
+  </dialog>
+</el-dialog>  -->
+
+
+
+
 </body>
 </html>

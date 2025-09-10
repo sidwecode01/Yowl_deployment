@@ -46,7 +46,7 @@
       <div class="flex items-center gap-2">
         <img src="../Logo/Logo-removebg-preview - Modifié.png" alt="admin" class="w-8 h-8 rounded-full">
         <div>
-          <p class="text-sm font-semibold">Sidyellow</p>
+          <p class="text-sm font-semibold">{{ auth()->user()->name }}</p>
           <p class="text-xs text-gray-500">Admin</p>
         </div>
       </div>
@@ -56,7 +56,7 @@
 
       <div class="overflow-x-auto bg-white rounded-xl shadow">
 
-        <table class="w-full text-left border-collapse">
+        <!-- <table class="w-full text-left border-collapse">
           <thead>
             <tr class="bg-gray-100 text-gray-600">
               <th class="px-6 py-3">Username</th>
@@ -72,6 +72,40 @@
               <td class="px-6 py-3">yes</td>
               <td class="px-6 py-3">yes</td>
             </tr>
+          </tbody>
+        </table> -->
+
+
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-gray-100 text-gray-600">
+              <th class="px-6 py-3">Username</th>
+              <th class="px-6 py-3">Email</th>
+              <th class="px-6 py-3">Online</th>
+              <!-- <th class="px-6 py-3">Is-admin</th> -->
+              <!-- <th class="px-6 py-3 bg-blue-400 text-white">SEE MORE</th> -->
+
+              <!-- <th class="px-6 py-3 bg-green-400 text-white">EDIT</th>  -->
+              <th class="px-6 py-3 bg-red-400 text-white ">DELETE</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach($allUser as $user)
+            <tr class="border-t">
+              <td class="px-6 py-3">{{$user->name}}</td>
+              <td class="px-6 py-3">{{$user->email}}</td>
+              <!-- <td class="px-6 py-3">yes</td> -->
+              <td class="px-6 py-3">
+                <span class=" p-2 rounded-full bg-{{ $user->last_active_at >= now()->subMinutes(2) ? 'green' : 'red' }}-500">
+                    {{ $user->last_active_at >= now()->subMinutes(2) ? 'Online' : 'Offline'  }}
+                </span>
+              </td>
+              <!-- <td class="px-6 py-3 text-center"><button class="text-3xl text-blue-500 w-10 h-10 rounded-xl " ><i class='bx bx-show'></i></button></td> -->
+              <!-- <td class="px-6 py-3 text-center"><a href="update/{{$user->id}}"><button command="show-modal" commandfor="dialog" class="text-3xl text-green-500 w-10 h-10 rounded-xl " ><i class='bx bxs-edit-alt'></i></button></a></td>  -->
+              <td class="px-6 py-3 text-center"><a href="delete/{{$user->id}}"><button class="text-3xl text-red-500 w-10 h-10 rounded-xl " ><i class='bx bx-trash'></i></button></a></td>
+            </tr>
+            @endforeach
+            <!-- here -->
           </tbody>
         </table>
       </div>

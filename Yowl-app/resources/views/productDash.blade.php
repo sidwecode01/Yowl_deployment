@@ -51,27 +51,31 @@
       </div>
     </header>
 
-    <h2 class="text-lg font-bold mb-4 text-blue-600">PRODUCTS</h2>
+    <h2 class=" m-4 text-lg font-bold mb-4 text-blue-600">PRODUCTS</h2>
 
 
-      <div class="overflow-x-auto bg-white rounded-xl shadow">
+      <div class="p-4  mx-auto  w-[90%] overflow-x-auto bg-white rounded-xl shadow">
 
-        <table class="w-full text-left border-collapse">
+        <table class="w-[100%] text-left border-collapse">
           <thead>
             <tr class="bg-gray-100 text-gray-600">
+              <th class="px-6 py-3">Image</th>
               <th class="px-6 py-3">Title</th>
+              
               <th class="px-6 py-3">Link</th>
-              <th class="px-6 py-3"></th>
-              <th class="px-6 py-3"></th>
-              <th class="px-6 py-3"></th>
+              <th class="px-6 py-3">See more</th>
+              
             </tr>
           </thead>
           <tbody>
             @foreach($posts as $post)
                <tr class="border-t">
-                  <td class="px-6 py-3"><strong>{{ $post->title }}</strong></td>
-                  <td class="px-6 py-3"><a class="text-blue-500" href="{{ $post->url }}">{{ $post->url }}</a></td>
-                  <td class="px-6 py-3"></td>
+                <td class="px-6 py-3 w-48"><img class="w-full" src="{{ $post->image }}" alt="picture are here"></td>
+                  
+                  <td class="px-6 py-3 text-xl"> <strong>{{ $post->title }}</strong></td>
+                  <!-- <td class="px-6 py-3 text-xl"> <strong>{{ $post->description }}</strong></td> -->
+                  <td class="px-6 py-3 text-xl"><a class="text-blue-500" href="{{ $post->url }}">{{ $post->url }}</a></td>
+                  
                   <td class="px-6 py-3">
                     <button command="show-modal" commandfor="dialog" class="rounded-xl px-4 py-2 hover:text-green-700 text-blue-600 text-center">
                       <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
