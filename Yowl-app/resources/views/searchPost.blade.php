@@ -148,7 +148,7 @@
     <form action="{{ route('search') }}" method="GET" class="flex w-full max-w-md">
         <input type="text" name="search" 
                class="w-full border rounded-l-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-               placeholder="Search posts by title, description or author...">
+               placeholder="Search posts by title...">
         <button type="submit"
                 class="bg-blue-600 text-white px-4 py-2 rounded-r-lg hover:bg-blue-700">
             Search
