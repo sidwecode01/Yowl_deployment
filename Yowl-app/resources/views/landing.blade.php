@@ -33,9 +33,7 @@
         <div class="ic-navbar-container relative -mx-5 flex items-center justify-between">
           
           <div class="w-60 lg:w-56 max-w-full px-5">
-            <a href="." class="ic-navbar-logo block w-full py-5 text-primary-color">
               <img src="../Logo/whiteLogos.png" alt="" class="h-12">
-            </a>
           </div>
 
           <div class="flex w-full items-center justify-between px-5">
@@ -166,9 +164,7 @@
                     more-or-less normal distribution of letters, look like
                     readable English.
                   </p>
-                  <p>
-                  cd 
-                  </p>
+           
                 </div>
 
                 </div>
