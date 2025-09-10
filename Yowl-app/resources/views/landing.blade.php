@@ -32,10 +32,10 @@
       <div class="container">
         <div class="ic-navbar-container relative -mx-5 flex items-center justify-between">
           
-          <div  class="w-60 lg:w-56 max-w-full px-5">
-            <!-- <a href="." class="ic-navbar-logo block w-full py-5 text-primary-color"> -->
-              <img id="logoD" src="../Logo/whiteLogos.png" alt=""  class="h-12">
-            <!-- </a> -->
+          <div class="w-60 lg:w-56 max-w-full px-5">
+            <a href="." class="ic-navbar-logo block w-full py-5 text-primary-color">
+              <img src="../Logo/whiteLogos.png" alt="" class="h-12">
+            </a>
           </div>
 
           <div class="flex w-full items-center justify-between px-5">
@@ -2538,12 +2538,6 @@ p + p{
   // Web theme
   const webTheme = document.querySelector("[data-web-trigger=web-theme]"),
     html = document.querySelector("html");
-
-    const logoColor =document.getElementById('#logoD');
-    logoColor.addEventListener('click', ()=> {
-      console.log('good');
-      
-    });
 
   window.addEventListener("load", function () {
     var theme = localStorage.getItem("Inazuma_WebTheme");
