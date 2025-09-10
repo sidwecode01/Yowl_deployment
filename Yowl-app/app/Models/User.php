@@ -31,6 +31,12 @@ class User extends Authenticatable
         'is_admin',
     ];
 
+    public function likedPosts()
+{
+    return $this->belongsToMany(Post::class, 'likes');
+}
+
+
     /**
      * The attributes that should be hidden for serialization.
      *

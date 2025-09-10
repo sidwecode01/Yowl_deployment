@@ -7,6 +7,8 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Home</title>
 
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
   <!-- Header -->
 <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -176,14 +178,48 @@
 
         <p class=" text-gray-500">{{ $post->created_at->diffForHumans() }}</p>
 
-          <div class="flex justify-end mt-2">
+
+
+
+
+
+          <div class="flex justify-end mt-2 ">
+<!-- here -->
+
+           <div class="flex justify-end mt-2">
+    <div class="flex justify-between mt-2 px-4 shadow-md w-full">
         <button
-        command="show-modal" commandfor="comments" class="flex items-center font-bold cursor-pointer">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
-            </svg>
-            <p class="">0</p>
+            class="flex items-center font-bold cursor-pointer gap-2 like_btn"
+            data-post-id="{{ $post->id }}">
+            <i class='bx bxs-like text-[30px] ' id="toggleBox"></i>
+            <p class="text-[1.3em]" id="like-count-{{ $post->id }}">
+                {{ $post->likedByUsers->count() }}
+
+            </p>
         </button>
+    </div>
+
+
+<script>
+    const icon = document.querySelector('.like_btn');
+    icon.addEventListener("click", ()=>{
+        icon.classList.toggle('text-blue-500')
+    })
+</script>
+
+
+<!-- here -->
+
+
+                <button
+                    command="show-modal" commandfor="comments" class="gap-2  flex items-center font-bold cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+                    </svg>
+                    <p class="text-[1.3em] ">0</p>
+                </button>
+            </div>
+
 
 <el-dialog>
   <dialog id="comments" aria-labelledby="comments-title" class="fixed inset-0 size-auto max-h-none max-w-none overflow-y-auto bg-transparent backdrop:bg-transparent">
