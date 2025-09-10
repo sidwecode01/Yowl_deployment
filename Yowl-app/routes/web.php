@@ -36,6 +36,12 @@ Route::get('/page', function () {
     return view('comment');
 })->name('comment');
 
+
+// serach 
+
+Route::get('/search', [PostController::class, 'search'])->name('search');
+
+
 Route::get('/Home', [PostController::class, 'index'])->name('home');
 Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
@@ -58,6 +64,10 @@ Route::middleware([
 
     Route::get('/userDash', [UsersController::class , 'index']
     )->name('users');
+
+
+    // like
+Route::post('/posts/{post}/like', [LikeController::class, 'toggle'])->name('posts.toggle-like');
 });
 
 // Route::get('/productDash', function(){
@@ -69,7 +79,6 @@ Route::get('/productDash', PostController::class .'@indexDash')->name('products'
 // Route::get('/productDash/{post}', PostController::class .'@show')->name('products');
 
 
-// like
-Route::post('/posts/{post}/like', [LikeController::class, 'toggle'])->name('posts.toggle-like');
+
 
 

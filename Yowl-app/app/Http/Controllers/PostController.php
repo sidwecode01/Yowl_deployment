@@ -23,6 +23,16 @@ class PostController extends Controller
         return view('welcome', ['posts' => $posts, 'user' => $user]);
     }
 
+    public function search(Request $request){
+        $search = $request->search;
+        $user = Auth::user();
+
+        $posts = Post::where('title', "LIKE", "%$search%" )
+        ->orWhere('description', "LIKE", "%$search%")
+        ->get();
+        return view('searchPost', ['posts' => $posts, 'user' => $user, 'search' => $search]);
+    }
+
     public function userPost($userId){
         $user = Auth::user();
         $posts = Post::where('user_id', $userId)->get();
