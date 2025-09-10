@@ -177,38 +177,30 @@
         </span></p>
 
         <p class=" text-gray-500">{{ $post->created_at->diffForHumans() }}</p>
+          <div class="flex justify-between mt-2 ">
+<!-- like -->
+
+
+        <div class="flex justify-between mt-2 px-4 shadow-md w-full">
+
+
+        <form action="{{ route('posts.toggle-like', $post) }}" method="POST">
+            @csrf
+            <button type="submit" class="flex items-center font-bold cursor-pointer gap-2">
+                <i class="bx bxs-like text-[30px]
+                    {{ auth()->check() && auth()->user()->likedPosts->contains($post->id) ? 'text-blue-500' : '' }}">
+                </i>
+                <p class="text-[1.3em]">{{ $post->likedByUsers->count() }}</p>
+            </button>
+        </form>
 
 
 
 
 
 
-          <div class="flex justify-end mt-2 ">
-<!-- here -->
 
-           <div class="flex justify-end mt-2">
-    <div class="flex justify-between mt-2 px-4 shadow-md w-full">
-        <button
-            class="flex items-center font-bold cursor-pointer gap-2 like_btn"
-            data-post-id="{{ $post->id }}">
-            <i class='bx bxs-like text-[30px] ' id="toggleBox"></i>
-            <p class="text-[1.3em]" id="like-count-{{ $post->id }}">
-                {{ $post->likedByUsers->count() }}
-
-            </p>
-        </button>
-    </div>
-
-
-<script>
-    const icon = document.querySelector('.like_btn');
-    icon.addEventListener("click", ()=>{
-        icon.classList.toggle('text-blue-500')
-    })
-</script>
-
-
-<!-- here -->
+<!-- like -->
 
 
                 <button

@@ -70,9 +70,6 @@ Route::get('/productDash', PostController::class .'@indexDash')->name('products'
 
 
 // like
+Route::post('/posts/{post}/like', [LikeController::class, 'toggle'])->name('posts.toggle-like');
 
-
-
-Route::post('/posts/{post}/like', [LikeController::class, 'like'])->name('posts.like');
-Route::delete('/posts/{post}/unlike', [LikeController::class, 'unlike'])->name('posts.unlike');
 
