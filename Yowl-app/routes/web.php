@@ -40,7 +40,8 @@ Route::get('/Home', [PostController::class, 'index'])->name('home');
 Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
 Route::post('/posts/{post}/comments', [CommentController::class, 'store'])->name('comments.store');
-Route::delete('/delete/{id}', [CommentController::class, 'destroy'])->name('comments.destroy');
+
+// Route::delete('/delete/{id}', [CommentController::class, 'destroy'])->name('comments.destroy');
 
 Route::put('/update/{post}', [PostController::class, 'update'])->name('posts.update');
 

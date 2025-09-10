@@ -84,12 +84,6 @@ class PostController extends Controller
         return redirect()->back()->with('success', 'Post supprimé avec succès !');
     }
 
-    // public function update(Post $post){
-
-    //     $post->update();
-    //     return redirect()->back()->with('success', 'Post supprimé avec succès !');
-    // }
-
     public function show(Post $post)
 {
     // Charge les commentair
