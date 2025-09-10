@@ -6,6 +6,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Home</title>
+
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 
 <x-header />
@@ -127,6 +130,35 @@
             <p class=" text-gray-500">{{ $post->created_at->diffForHumans() }}</p>
 
               <div class="flex justify-end mt-2">
+
+
+              <!-- here -->
+
+           <div class="flex justify-end mt-2 items-end">
+    <div class="flex justify-between mt-2 px-4 w-full">
+        <button
+            class="flex items-center font-bold cursor-pointer like_btn"
+            data-post-id="{{ $post->id }}">
+            <i class='bx bxs-like text-[30px] ' id="toggleBox"></i>
+            <p class="text-[1.3em]" id="like-count-{{ $post->id }}">
+                {{ $post->likedByUsers->count() }}
+
+            </p>
+        </button>
+    </div>
+
+
+
+<script>
+    const icon = document.querySelector('.like_btn');
+    icon.addEventListener("click", ()=>{
+        icon.classList.toggle('text-blue-500')
+    })
+</script>
+
+
+<!-- here -->
+
             <button
             command="show-modal" commandfor="comments" class="flex items-center font-bold cursor-pointer">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
@@ -134,6 +166,7 @@
                 </svg>
                 <p class="">0</p>
             </button>
+                </div>
 
     <el-dialog>
       <dialog id="comments" aria-labelledby="comments-title" class="fixed inset-0 size-auto max-h-none max-w-none overflow-y-auto bg-transparent backdrop:bg-transparent">

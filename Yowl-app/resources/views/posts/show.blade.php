@@ -76,7 +76,7 @@
                 <form action="{{ route('comments.store', $post) }}" method="POST" class="mt-4">
                     @csrf
                     <textarea name="content" rows="3" class="w-full border rounded p-2" placeholder="Write your comment..." required></textarea>
-                    <button type="submit" class="mt-2 bg-blue-600 text-white px-4 py-2 rounded">
+                    <button type="submit" class="mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-400">
                         Publish
                     </button>
                 </form>

@@ -5,7 +5,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
 // use App\Http\Controllers\CommentController;
-
+use App\Http\Controllers\LikeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +24,7 @@ Route::get('/', function () {
 
 Route::get('/userDashboard/{id}', [PostController::class, 'userPost'])->name('userDashboard');
 
-Route::delete('/delete/{post}', [PostController::class, 'delete'])->name('posts.destroy');
+Route::delete('/deletePost/{post}', [PostController::class, 'delete'])->name('posts.destroy');
 
 // Route::get('/userDashboard', function () {
 //     return view('userDashboard');
@@ -40,8 +40,7 @@ Route::get('/Home', [PostController::class, 'index'])->name('home');
 Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
 Route::post('/posts/{post}/comments', [CommentController::class, 'store'])->name('comments.store');
-
-// Route::delete('/delete/{id}', [CommentController::class, 'destroy'])->name('comments.destroy');
+Route::delete('/deleteComment/{id}', [CommentController::class, 'destroy'])->name('comments.destroy');
 
 Route::put('/update/{post}', [PostController::class, 'update'])->name('posts.update');
 
@@ -68,3 +67,12 @@ Route::middleware([
 Route::get('/productDash', PostController::class .'@indexDash')->name('products');
 
 // Route::get('/productDash/{post}', PostController::class .'@show')->name('products');
+
+
+// like
+
+
+
+Route::post('/posts/{post}/like', [LikeController::class, 'like'])->name('posts.like');
+Route::delete('/posts/{post}/unlike', [LikeController::class, 'unlike'])->name('posts.unlike');
+
