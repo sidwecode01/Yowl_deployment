@@ -44,7 +44,6 @@
         </nav>
       </div>
       <div class="flex items-center gap-2">
-        <img src="../Logo/Logo-removebg-preview - Modifié.png" alt="admin" class="w-8 h-8 rounded-full">
         <div>
           <p class="text-sm font-semibold">{{ auth()->user()->name }}</p>
           <p class="text-xs text-gray-500">Admin</p>
