@@ -9,7 +9,6 @@
     <!-- Favicons -->
     <link href="/Yowl-app/public/Logo/bluelogo2.png" rel="icon">
     <link href="/Yowl-app/public/Logo/bluelogo2.png" rel="apple-touch-icon">
-    https://www.online-convert.com/fr/result#j=aa57d55d-64e7-4440-b9cc-b05acd15312c
     <title>Home</title>
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -24,14 +23,14 @@
         <div
             class="md:mt-50 hidden 2xl:shadow-gray-400 lg:shadow-gray-400 lg:block lg:w-40 lg:max-w-60 lg:pt-5 lg:ml-0 lg:mt-13 lg:h-200 2xl:block 2xl:w-70 lg:w-70 2xl:max-w-60 2xl:pt-2 2xl:ml-70 2xl:ml-10 2xl:mt-14 2xl:h-221 bg-white border border-gray-200 rounded-2xl shadow-sm dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
             <ul class="space-y-1">
-                <p class="px-4 py-2 lg:text-sm 2xl:text-2xl font-medium text-gray-500">
+                <p class="px-4 py-2 lg:text-sm 2xl:text-xl font-medium text-gray-500">
                     MENU
                 </p>
 
                 <li>
                     @auth
                         <button command="show-modal" commandfor="dialog"
-                            class="flex hover:border-l-6 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-blue-100 hover:border-blue-400 hover:text-blue-400">
+                            class="flex hover:border-l-6 px-4 py-2 lg:text-sm 2xl:text-2xl font-medium text-gray-900 hover:bg-blue-100 hover:border-blue-400 hover:text-blue-400">
                             <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
 
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -153,39 +152,6 @@
                                 </button>
                             </form>
                         </div>
-            <!-- Bar de recherche -->
-
-            <!-- POSTS -->
-            {{-- @foreach ($posts as $post)
-                <div
-                    class="md:w-150 md:m-auto md:mb-9 lg:m-auto lg:w-130 lg:mt-5 lg:mb-2 bg-white shadow rounded-2xl p-4 mb-4 2xl:w-200 lg:w-100 2xl:ml-10 2xl:shadow-gray-400 lg:shadow-gray-400 hover:shadow-blue-800 transition delay-150 duration-1000 ease-in-out hover:scale-105">
-                    <a href="{{ route('posts.show', $post) }}" target="_blank"
-                        class="font-bold lg:text-2xl 2xl:text-22xl text-blue-600 md:text-2xl">
-                        {{ $post->title }}
-                    </a><br>
-                    @if ($post->image)
-                        <a href="{{ route('posts.show', $post) }}">
-                            <img src="{{ $post->image }}" alt="preview"
-                                class="2xl:w-full 2xl:h-50 object-cover rounded mt-2">
-                        </a>
-                    @endif
-                    <a href="{{ $post->url }}" class=" text-blue-600 underline mt-4 line-clamp-2 md:text-xl">
-                        {{ $post->url }}
-                    </a><br>
-                    <p class=" mt-3">Author:
-                        <span class=" text-2xl font-semibold text-red-400">
-                            {{ $post->user->name }}
-                        </span>
-                    </p>
-
-                    <p class=" text-gray-500">{{ $post->created_at->diffForHumans() }}</p>
-
-                    <div class="flex justify-end mt-2"> --}}
-
-                        <!-- here -->
-
-
-
 
 
                        @foreach ($posts as $post)

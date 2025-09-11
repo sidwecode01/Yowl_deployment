@@ -34,7 +34,7 @@
       aria-label="Navigation bar">
       <div class="container">
         <div class="ic-navbar-container relative -mx-5 flex items-center justify-between">
-          
+
           <div class="w-60 lg:w-56 max-w-full px-5">
               <img src="../Logo/whiteLogos.png" alt="" class="h-12">
           </div>
@@ -51,23 +51,6 @@
                 <i class="lni lni-menu"></i>
               </button>
 
-              <nav
-                id="navbarMenu"
-                class="ic-navbar-collapse absolute right-4 top-[80px] w-full max-w-[250px] rounded-lg hidden bg-primary-light-1 py-5 shadow-lg dark:bg-primary-dark-1 lg:static lg:block lg:w-full lg:max-w-full lg:bg-transparent lg:py-0 lg:shadow-none dark:lg:bg-transparent xl:px-6">
-                <ul
-                  class="block lg:flex"
-                  role="menu"
-                  aria-label="Navigation menu">
-                  <li class="group relative">
-                    <a
-                      href="/"
-                      class="ic-page-scroll mx-8 flex py-2 text-base font-medium text-body-light-12 group-hover:text-primary dark:text-body-dark-12 lg:mx-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-primary-color lg:dark:text-primary-color lg:group-hover:text-primary-color lg:group-hover:opacity-70 active"
-                      role="menuitem">Home</a>
-                  </li>
-
-                </ul>
-
-              </nav>
 
             </div>
             <div class="flex items-center justify-end pr-[52px] lg:pr-0">
@@ -120,10 +103,10 @@
 
                 </ul>
 
-              
+
               </div>
             </div>
-         
+
           </div>
         </div>
       </section>
@@ -162,10 +145,10 @@
                   aria-labelledby="tabs-list-profile">
                   <p>
                     Each member of our team has just returned from a difficult
-                    ordeal of non-stop project successions and each has their own 
+                    ordeal of non-stop project successions and each has their own
                     way of handling difficulties. And also, each one has come a long way.
                   </p>
-           
+
                 </div>
 
                 </div>
@@ -184,7 +167,7 @@
             </h6>
             <h2 class="mb-6">Our Best Features</h2>
             <p>
-              On our website we have several 
+              On our website we have several
               features or should I say services
             </p>
           </div>
@@ -201,10 +184,10 @@
                     Comment Without Constraint
                   </h4>
                   <p>
-                    Most of the sites and applications that exist 
-                    today have a more or less restrictive policy preventing 
-                    users from expressing their feelings through comments. 
-                    Through our site we put an end to all of this. 
+                    Most of the sites and applications that exist
+                    today have a more or less restrictive policy preventing
+                    users from expressing their feelings through comments.
+                    Through our site we put an end to all of this.
                     Our users have the possibility to comment on all and any posts without constraint.
                   </p>
                 </div>
@@ -222,8 +205,8 @@
                     Importing Posts
                   </h4>
                   <p>
-                    To comment on everything you want, you need something to comment on, 
-                    and we offer a system for searching for posts you want to comment on via URL. 
+                    To comment on everything you want, you need something to comment on,
+                    and we offer a system for searching for posts you want to comment on via URL.
                     How does it work? I see a post and I want to comment, just import the URL of the
                     post on YOWL and I can comment without any problems.
                   </p>
@@ -243,7 +226,7 @@
                     user interaction
                   </h4>
                   <p>
-                    Our users have the ability to reply to a post, 
+                    Our users have the ability to reply to a post,
                     like a post, and reply to comments.
                   </p>
                 </div>
@@ -261,7 +244,7 @@
                     Editing profiles or posts
                   </h4>
                   <p>
-                    Our users will have the option to modify their personal information after registration if they wish. 
+                    Our users will have the option to modify their personal information after registration if they wish.
                     They will also have the option to do the same with posts.
                   </p>
                 </div>
@@ -279,7 +262,7 @@
                     deletion of profiles or posts
                   </h4>
                   <p>
-                    Our users will have the option to delete their personal information after registration if they wish. 
+                    Our users will have the option to delete their personal information after registration if they wish.
                     They will also have the option to do the same with posts.
                   </p>
                 </div>
@@ -297,7 +280,7 @@
                     see interactions on posts
                   </h4>
                   <p>
-                    Our users will be able to see the interactions on each of their posts, 
+                    Our users will be able to see the interactions on each of their posts,
                     i.e. comments and the number of likes.
                   </p>
                 </div>
