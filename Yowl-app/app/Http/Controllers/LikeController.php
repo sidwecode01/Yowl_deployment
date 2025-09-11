@@ -1,41 +1,23 @@
 <?php
-
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
 
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
 
 class LikeController extends Controller
 {
-    //
-
-     public function like(Post $post)
+    public function toggle(Post $post)
     {
         $user = Auth::user();
 
-        // Empêcher les doublons
-        if (!$user->likedPosts->contains($post->id)) {
+        if ($user->likedPosts()->where('post_id', $post->id)->exists()) {
+
+            $user->likedPosts()->detach($post->id);
+        } else {
+
             $user->likedPosts()->attach($post->id);
         }
 
-        return back();
-    }
-
-    public function unlike(Post $post)
-    {
-        $user = Auth::user();
-
-        $user->likedPosts()->detach($post->id);
-
-        return back();
+        return back(); 
     }
 }
-
-
-
-
-
-
-

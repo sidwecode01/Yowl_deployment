@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="canonical" href="https://ranyeh24.github.io/inazuma-tailwind" />
 
+    <!-- font awersome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png"/>
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png"/>
@@ -57,7 +60,7 @@
                   aria-label="Navigation menu">
                   <li class="group relative">
                     <a
-                      href="/landing"
+                      href="/"
                       class="ic-page-scroll mx-8 flex py-2 text-base font-medium text-body-light-12 group-hover:text-primary dark:text-body-dark-12 lg:mx-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-primary-color lg:dark:text-primary-color lg:group-hover:text-primary-color lg:group-hover:opacity-70 active"
                       role="menuitem">Home</a>
                   </li>
@@ -101,7 +104,8 @@
 
                 <p
                   class="mx-auto mb-9 max-w-[600px] text-base text-primary-color sm:text-lg sm:leading-normal">
-                 If you need to post comments without any constraints, here is one for you. Express your most adorable comments.
+                 If you need to post comments without any constraints, here is one for you.
+                  Express your most adorable comments.
                 </p>
 
                 <ul
@@ -131,7 +135,7 @@
             <div class="w-full">
               <figure class="scroll-revealed max-w-[480px] mx-auto">
                 <img
-                  src="../Logo/signup.jpeg"
+                  src="../Logo/image.jpg"
                   alt="About image"
                   class="rounded-xl"
                 />
@@ -155,14 +159,11 @@
                   id="tabs-panel-profile"
                   tabindex="-1"
                   role="tabpanel"
-                  aria-labelledby="tabs-list-profile"
-                >
+                  aria-labelledby="tabs-list-profile">
                   <p>
-                    It is a long established fact that a reader will be
-                    distracted by the readable content of a page when looking at
-                    its layout. The point of using Lorem Ipsum is that it has a
-                    more-or-less normal distribution of letters, look like
-                    readable English.
+                    Each member of our team has just returned from a difficult
+                    ordeal of non-stop project successions and each has their own 
+                    way of handling difficulties. And also, each one has come a long way.
                   </p>
            
                 </div>
@@ -179,12 +180,12 @@
         <div class="container">
           <div class="scroll-revealed text-center max-w-[550px] mx-auto mb-12">
             <h6 class="mb-2 block text-lg font-semibold text-primary">
-              Services
+              Features
             </h6>
-            <h2 class="mb-6">Our Best Services</h2>
+            <h2 class="mb-6">Our Best Features</h2>
             <p>
-              There are many variations of passages of Lorem Ipsum available but
-              the majority have suffered alteration in some form.
+              On our website we have several 
+              features or should I say services
             </p>
           </div>
 
@@ -192,18 +193,39 @@
             <div class="scroll-revealed col-12 sm:col-6 lg:col-4">
               <div class="group hover:-translate-y-1">
                 <div
-                  class="w-[70px] h-[70px] rounded-2xl mb-6 flex items-center justify-center text-[37px]/none bg-primary text-primary-color"
-                >
-                  <i class="lni lni-capsule"></i>
+                  class="w-[70px] h-[70px] rounded-2xl mb-6 flex items-center justify-center text-[37px]/none bg-primary text-primary-color">
+                  <i class="fa-regular fa-comments"></i>
                 </div>
                 <div class="w-full">
                   <h4 class="text-[1.25rem]/tight font-semibold mb-5">
-                    Refreshing Design
+                    Comment Without Constraint
                   </h4>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Voluptatum dolores autem quidem odit beatae perspiciatis!
-                    Rem.
+                    Most of the sites and applications that exist 
+                    today have a more or less restrictive policy preventing 
+                    users from expressing their feelings through comments. 
+                    Through our site we put an end to all of this. 
+                    Our users have the possibility to comment on all and any posts without constraint.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="scroll-revealed col-12 sm:col-6 lg:col-4">
+              <div class="group hover:-translate-y-1">
+                <div
+                  class="w-[70px] h-[70px] rounded-2xl mb-6 flex items-center justify-center text-[37px]/none bg-primary text-primary-color">
+                  <i class="fa-solid fa-link"></i>
+                </div>
+                <div class="w-full">
+                  <h4 class="text-[1.25rem]/tight font-semibold mb-5">
+                    Importing Posts
+                  </h4>
+                  <p>
+                    To comment on everything you want, you need something to comment on, 
+                    and we offer a system for searching for posts you want to comment on via URL. 
+                    How does it work? I see a post and I want to comment, just import the URL of the
+                    post on YOWL and I can comment without any problems.
                   </p>
                 </div>
               </div>
@@ -214,16 +236,15 @@
                 <div
                   class="w-[70px] h-[70px] rounded-2xl mb-6 flex items-center justify-center text-[37px]/none bg-primary text-primary-color"
                 >
-                  <i class="lni lni-tailwindcss"></i>
+                  <i class="fa-regular fa-comment"></i>
                 </div>
                 <div class="w-full">
                   <h4 class="text-[1.25rem]/tight font-semibold mb-5">
-                    Solid Tailwind CSS
+                    user interaction
                   </h4>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Voluptatum dolores autem quidem odit beatae perspiciatis!
-                    Rem.
+                    Our users have the ability to reply to a post, 
+                    like a post, and reply to comments.
                   </p>
                 </div>
               </div>
@@ -232,18 +253,16 @@
             <div class="scroll-revealed col-12 sm:col-6 lg:col-4">
               <div class="group hover:-translate-y-1">
                 <div
-                  class="w-[70px] h-[70px] rounded-2xl mb-6 flex items-center justify-center text-[37px]/none bg-primary text-primary-color"
-                >
-                  <i class="lni lni-gift"></i>
+                  class="w-[70px] h-[70px] rounded-2xl mb-6 flex items-center justify-center text-[37px]/none bg-primary text-primary-color">
+                  <i class="fa-regular fa-pen-to-square"></i>
                 </div>
                 <div class="w-full">
                   <h4 class="text-[1.25rem]/tight font-semibold mb-5">
-                    Free and Open-Source
+                    Editing profiles or posts
                   </h4>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Voluptatum dolores autem quidem odit beatae perspiciatis!
-                    Rem.
+                    Our users will have the option to modify their personal information after registration if they wish. 
+                    They will also have the option to do the same with posts.
                   </p>
                 </div>
               </div>
@@ -252,18 +271,16 @@
             <div class="scroll-revealed col-12 sm:col-6 lg:col-4">
               <div class="group hover:-translate-y-1">
                 <div
-                  class="w-[70px] h-[70px] rounded-2xl mb-6 flex items-center justify-center text-[37px]/none bg-primary text-primary-color"
-                >
-                  <i class="lni lni-layout"></i>
+                  class="w-[70px] h-[70px] rounded-2xl mb-6 flex items-center justify-center text-[37px]/none bg-primary text-primary-color">
+                  <i class="fa-solid fa-trash"></i>
                 </div>
                 <div class="w-full">
                   <h4 class="text-[1.25rem]/tight font-semibold mb-5">
-                    Multipurpose Template
+                    deletion of profiles or posts
                   </h4>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Voluptatum dolores autem quidem odit beatae perspiciatis!
-                    Rem.
+                    Our users will have the option to delete their personal information after registration if they wish. 
+                    They will also have the option to do the same with posts.
                   </p>
                 </div>
               </div>
@@ -272,38 +289,16 @@
             <div class="scroll-revealed col-12 sm:col-6 lg:col-4">
               <div class="group hover:-translate-y-1">
                 <div
-                  class="w-[70px] h-[70px] rounded-2xl mb-6 flex items-center justify-center text-[37px]/none bg-primary text-primary-color"
-                >
-                  <i class="lni lni-layers"></i>
+                  class="w-[70px] h-[70px] rounded-2xl mb-6 flex items-center justify-center text-[37px]/none bg-primary text-primary-color">
+                  <i class="fa-solid fa-eye"></i>
                 </div>
                 <div class="w-full">
                   <h4 class="text-[1.25rem]/tight font-semibold mb-5">
-                    Fully Customizable
+                    see interactions on posts
                   </h4>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Voluptatum dolores autem quidem odit beatae perspiciatis!
-                    Rem.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="scroll-revealed col-12 sm:col-6 lg:col-4">
-              <div class="group hover:-translate-y-1">
-                <div
-                  class="w-[70px] h-[70px] rounded-2xl mb-6 flex items-center justify-center text-[37px]/none bg-primary text-primary-color"
-                >
-                  <i class="lni lni-grid-alt"></i>
-                </div>
-                <div class="w-full">
-                  <h4 class="text-[1.25rem]/tight font-semibold mb-5">
-                    All Essential Elements
-                  </h4>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Voluptatum dolores autem quidem odit beatae perspiciatis!
-                    Rem.
+                    Our users will be able to see the interactions on each of their posts, 
+                    i.e. comments and the number of likes.
                   </p>
                 </div>
               </div>
@@ -330,7 +325,7 @@
 
     <script src="./assets/js/main.js"></script>
     <script>
-      // Scroll Reveal
+      Scroll Reveal
       const sr = ScrollReveal({
         origin: "bottom",
         distance: "16px",
@@ -342,7 +337,7 @@
         cleanup: true,
       });
 
-      // GLightBox
+      GLightBox/
       GLightbox({
         selector: ".video-popup",
         href: "https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM",
@@ -358,7 +353,7 @@
         width: 900,
       });
 
-      // Testimonial
+      Testimonial
       const testimonialSwiper = new Swiper(".testimonial-carousel", {
         slidesPerView: 1,
         spaceBetween: 30,
