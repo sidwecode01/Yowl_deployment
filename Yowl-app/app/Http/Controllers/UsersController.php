@@ -20,6 +20,7 @@ class UsersController extends Controller
         // $lastActivity = $user->last_active_at;
 
         $allUser = User::all();
+        
         $online = 'No';
         if(auth()->check()){
             $online = 'Yes';

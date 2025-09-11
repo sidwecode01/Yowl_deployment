@@ -8,7 +8,9 @@
         class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-4 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         href="/Home" class="block py-2 px-3 text-white bg-gray-700 md:bg-transparent md:text-gray-500 hover:text-gray-900 md:p-0 md:dark:text-gray-500" aria-current="page">
         Home
-    </a>
+        </a>
+
+       
 
 <div class="flex 2xl:order-2 lg:order-2 md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
     @auth

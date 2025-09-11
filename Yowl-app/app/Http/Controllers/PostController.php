@@ -18,9 +18,12 @@ class PostController extends Controller
     {
         $user = Auth::user();
 
+        $admin = User::where("is_admin" , 1)->get();
+
+
         $posts = Post::latest()->get();
 
-        return view('welcome', ['posts' => $posts, 'user' => $user]);
+        return view('welcome', ['posts' => $posts, 'user' => $user, "admin" =>$admin]);
     }
 
     public function search(Request $request){

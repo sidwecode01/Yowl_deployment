@@ -120,6 +120,23 @@
                         </a>
                     @endauth
                 </li>
+
+                 <li>
+                    @auth
+
+                     @foreach($admin as $superUser)
+                        @if($superUser->name == auth()->user()->name )
+                             <a href="/Dash"
+                            class="flex hover:border-l-6 px-4 py-2 lg:text-sm 2xl:text-2xl font-medium text-gray-900 hover:bg-blue-100 hover:border-blue-400 hover:text-blue-400">
+                            <img src="../Logo/dashboard.png" alt="dashboard"
+                                class="w-5 mr-1 mt-1 lg:mr-1 lg:mt-0 2xl:mr-1 2xl:mt-1">
+                            Admin
+                        </a>
+                        @endif
+                    @endforeach
+
+                    @endauth
+                </li>
             </ul>
         </div>
 
