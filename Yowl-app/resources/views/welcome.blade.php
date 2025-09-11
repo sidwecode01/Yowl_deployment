@@ -20,7 +20,7 @@
 <body>
 <!-- navbar vertical -->
 <div class="flex flex-col lg:flex-row justify-between">
-  <div class="md:mt-50 hidden 2xl:shadow-gray-400 lg:shadow-gray-400 lg:block lg:w-40 lg:max-w-60 lg:pt-5 lg:ml-0 lg:mt-13 lg:h-200 2xl:block 2xl:w-70 lg:w-70 2xl:max-w-60 2xl:pt-2 2xl:ml-70 2xl:ml-10 2xl:mt-14 2xl:h-221 bg-white border border-gray-200 rounded-2xl shadow-sm dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">  
+  <div class="md:mt-50 hidden 2xl:shadow-gray-400 lg:shadow-gray-400 lg:block lg:w-40 lg:max-w-60 lg:pt-5 lg:ml-0 lg:mt-13 lg:h-200 2xl:block 2xl:w-70 lg:w-70 2xl:max-w-60 2xl:pt-2 2xl:ml-70 2xl:ml-10 2xl:mt-14 2xl:h-221 bg-white border border-gray-200 rounded-2xl shadow-sm dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
   <ul class="space-y-1">
       <p class="px-4 py-2 lg:text-sm 2xl:text-2xl font-medium text-gray-500">
         MENU
