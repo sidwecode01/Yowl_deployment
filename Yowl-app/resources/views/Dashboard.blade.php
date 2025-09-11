@@ -58,27 +58,27 @@
       <h2 class="text-lg font-bold mb-4 text-blue-600">Dashboard</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         <div class="bg-white p-4 rounded-xl shadow">
-          <p class="text-gray-600">Customers connected today</p>
-          <p class="text-2xl font-bold">+34%</p>
+          <p class="text-gray-600">Customers connected per Day</p>
+          <p class="text-2xl font-bold py-5">Total user : {{ $totalUser}}</p>
           <!-- <div class="mt-2 h-2 bg-blue-100 rounded"></div> -->
            <canvas id="line-chart" role="img"></canvas>
         </div>
         <div class="bg-white p-4 rounded-xl shadow">
-          <p class="text-gray-600">Products</p>
-          <p class="text-2xl font-bold">+34%</p>
+          <p class="text-gray-600">Post adding per Day</p>
+          <p class="text-2xl font-bold py-5">Total post :{{ $totalPost}}</p>
           <!-- <div class="mt-2 h-2 bg-blue-100 rounded"></div> -->
             <canvas id="line-chart2"  role="img"></canvas>
            <!-- here -->
         </div>
         <div class="bg-white p-4 rounded-xl shadow">
           <p class="text-gray-600">Customers</p>
-          <p class="text-2xl font-bold">86%</p>
+          <p class="text-2xl font-bold py-5">86%</p>
           <!-- <div class="mt-2 h-2 bg-blue-100 rounded"></div> -->
            <canvas id="line-chart3"></canvas>
         </div>
         <div class="bg-white p-4 rounded-xl shadow">
-          <p class="text-gray-600">Comments</p>
-          <p class="text-2xl font-bold">86%</p>
+          <p class="text-gray-600 ">Comments per Day</p>
+          <p class="text-2xl font-bold py-5">Total comment : {{ $totalComment}}</p>
           <!-- <div class="mt-2 h-2 bg-blue-100 rounded"></div> -->
            <canvas id="line-chart4"></canvas>
         </div>

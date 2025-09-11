@@ -68,6 +68,8 @@ Route::middleware([
     Route::get('/userDash', [UsersController::class , 'index']
     )->name('users');
 
+    Route::get('/productDash', PostController::class .'@indexDash')->name('products');
+
 
     // like
 Route::post('/posts/{post}/like', [LikeController::class, 'toggle'])->name('posts.toggle-like');
@@ -77,7 +79,7 @@ Route::post('/posts/{post}/like', [LikeController::class, 'toggle'])->name('post
 //     return view('productDash');
 // })->name('products');
 
-Route::get('/productDash', PostController::class .'@indexDash')->name('products');
+
 
 // Route::get('/productDash/{post}', PostController::class .'@show')->name('products');
 
