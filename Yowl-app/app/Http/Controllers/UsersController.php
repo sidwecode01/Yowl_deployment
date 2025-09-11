@@ -20,7 +20,7 @@ class UsersController extends Controller
         // $lastActivity = $user->last_active_at;
 
         $allUser = User::all();
-        
+
         $online = 'No';
         if(auth()->check()){
             $online = 'Yes';
@@ -36,18 +36,19 @@ class UsersController extends Controller
     }
 
     public function indexDash(){
-    $usersPerDay = DB::table('sessions')
-    ->selectRaw('DATE(FROM_UNIXTIME(last_activity)) as date, COUNT(DISTINCT user_id) as user_count')
-    ->whereNotNull('user_id')
-    ->where('last_activity', '>', Carbon::now()->subDays(7)->timestamp)
-    ->groupBy(DB::raw('DATE(FROM_UNIXTIME(last_activity))'))
-    ->orderBy('date', 'asc')
+    $usersPerDay = DB::table('users')
+    ->selectRaw('DAYNAME(created_at) as day, COUNT(*) as total')
+    ->whereNotNull('created_at')
+    ->groupBy('day')
+    ->orderByRaw('FIELD(day, "Monday", "Tuesday", "Wedneday", "Thursday", "Friday", "Saturday", "Sunday")')
     ->get();
 
        $data = [];
+       $day = [];
 
 foreach ($usersPerDay as $day) {
-    $data[] = $day->user_count;
+    $label[] = $day->day;
+    $data[] = $day->total;
 }
 
 
@@ -55,7 +56,7 @@ foreach ($usersPerDay as $day) {
 
 
         $users = User::orderBy('last_active_at', 'DESC')->get();
-        return view('Dashboard' , ['users'=> $users , 'usersPerDay'=>$data]);
+        return view('Dashboard' , ['users'=> $users , 'usersPerDay'=>$data, "label"=>$label]);
     }
 
 

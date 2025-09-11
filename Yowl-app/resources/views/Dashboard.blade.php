@@ -135,14 +135,7 @@
 
        const data1 = {
 
-             labels: [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday"],
+             labels: @json($label),
 
              datasets: [{
                label: "Users",
@@ -241,7 +234,7 @@
         // courbe2
 
          const  chart2 = new Chart(courbe2 , {
-           type: 'line',
+           type: 'bar',
            data: data2,
            options: {
             elements: {
@@ -256,12 +249,12 @@
 
         //  courbe3
          const chart3 = new Chart(courbe3, {
-          type: 'line',
+          type: 'doughnut',
           data: data3,
             options: {
             elements: {
                   point:{
-                    radius: 5,
+                    radius: 1,
                     backgroundColor: 'rgba(0,0,255, 0.5)',
 
               }
