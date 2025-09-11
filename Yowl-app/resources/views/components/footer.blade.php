@@ -1,8 +1,8 @@
 <footer class="w-full ">
    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
      <!--Grid-->
-     <div class="py-10 flex justify-between items-center  gap-8 xl:flex-row">
-       <div class="flex items-center xl:flex-row ">
+     <div class="py-10 flex justify-between items-center flex-col gap-8 xl:flex-row">
+       <div class="flex items-center flex-col xl:flex-row ">
          <a href="#" class="flex justify-center mb-8 xl:mb-0">
             <img src="../Logo/Logo-removebg-preview - Modifié.png" alt="LOGO">
            <!-- <svg class="w-40 h-8" viewBox="0 0 164 33" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -28,7 +28,7 @@
              </defs>
            </svg> -->
          </a>
-         <ul class="text-lg  flex items-center md:flex-row  py-8 gap-6 md:gap-12 xl:border-l border-gray-200 xl:ml-11 xl:pl-11 transition-all duration-500">
+         <ul class="text-lg  flex items-center flex-col md:flex-row  py-8 gap-6 md:gap-12 xl:border-l border-gray-200 xl:ml-11 xl:pl-11 transition-all duration-500">
            <li>
              <a href="#" class="text-gray-800 hover:text-indigo-600">YOWL</a>
            </li>
@@ -46,7 +46,7 @@
            </li>
          </ul>
        </div>
-       <div class="flex space-x-4 sm:justify-center">
+       <div class="flex  space-x-4 sm:justify-center  ">
          <a href="#" class="group w-9 h-9 rounded-full border border-gray-300 flex justify-center items-center transition-all duration-500 hover:border-black">
            <svg class="text-gray-700 transition-all duration-500  group-hover:text-black" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
              <g id="Social Media">
