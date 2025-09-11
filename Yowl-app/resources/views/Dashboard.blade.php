@@ -151,20 +151,13 @@
 
 
         const data2 = {
-          labels: [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday"],
+          labels: @json($postLabel),
 
             datasets: [{
               label: "Test",
-              backgroundColor: "rgba(245, 63, 135, 0.1)",
-              borderColor: "rgba(245, 63, 135, 1)",
-             data: [1, 26, 15, 74, 56, 67, 75],
+              backgroundColor: "rgba(241, 39, 120, 0.1)",
+              borderColor: "rgba(242, 42, 122, 1)",
+             data: @json($postData),
               fill: true,
 
             }]

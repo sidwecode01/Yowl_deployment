@@ -51,12 +51,26 @@ foreach ($usersPerDay as $day) {
     $data[] = $day->total;
 }
 
+$postPerDay = DB::table('posts')
+    ->selectRaw('DAYNAME(created_at) as day, COUNT(*) as total')
+    ->whereNotNull('created_at')
+    ->groupBy('day')
+    ->orderByRaw('FIELD(day, "Monday", "Tuesday", "Wedneday", "Thursday", "Friday", "Saturday", "Sunday")')
+    ->get();
 
+    $postData =[];
+    $postLebal = [];
+
+
+foreach ($postPerDay as $post) {
+        $postData[] = $post->total;
+        $postLebal[] = $post->day;
+}
 
 
 
         $users = User::orderBy('last_active_at', 'DESC')->get();
-        return view('Dashboard' , ['users'=> $users , 'usersPerDay'=>$data, "label"=>$label]);
+        return view('Dashboard' , ['users'=> $users , 'usersPerDay'=>$data, "label"=>$label, 'postLabel'=> $postLebal, 'postData' => $postData]);
     }
 
 
