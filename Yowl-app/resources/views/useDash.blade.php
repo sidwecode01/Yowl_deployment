@@ -39,8 +39,7 @@
       <div class="flex items-center gap-6">
         <div class="border rounded-lg p-1"><i class='bx bx-search'></i> <input type="text" placeholder="Search..." class="outline-none px-3 py-1 text-sm"></div>
         <nav class="flex gap-4 text-gray-700 font-medium">
-          <a href="{{ route('landing') }}" class="hover:text-blue-600">Home</a>
-          <a href="#" class="hover:text-blue-600">Landing</a>
+          <a href="{{ route('home') }}" class="hover:text-blue-600">Home</a>
         </nav>
       </div>
       <div class="flex items-center gap-2">
