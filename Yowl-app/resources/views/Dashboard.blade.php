@@ -184,21 +184,13 @@
         };
 
         const data4 = {
-          labels: [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday"
-          ],
+          labels: @json($commentLabel),
 
           datasets: [{
             label: 'Sidyellow',
             backgroundColor: 'rgba(249, 102, 14, 0.4)',
             borderColor: 'rgba(249, 102, 14, 0.67)',
-            data: [1,3,5,8,1,0,9],
+            data: @json($commentData),
             fill: true,
 
 
@@ -242,7 +234,7 @@
 
         //  courbe3
          const chart3 = new Chart(courbe3, {
-          type: 'doughnut',
+          type: 'line',
           data: data3,
             options: {
             elements: {
@@ -259,7 +251,7 @@
         //  courbe4
 
         const chart4 = new Chart(courbe4, {
-          type: 'line',
+          type: 'bar',
           data: data4,
           options: {
             elements: {

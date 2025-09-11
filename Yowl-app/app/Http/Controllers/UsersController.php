@@ -21,6 +21,9 @@ class UsersController extends Controller
 
         $allUser = User::all();
 
+        $totalUser = User::count();
+        dd($totalUser);
+
         $online = 'No';
         if(auth()->check()){
             $online = 'Yes';
@@ -36,6 +39,9 @@ class UsersController extends Controller
     }
 
     public function indexDash(){
+
+        // user
+
     $usersPerDay = DB::table('users')
     ->selectRaw('DAYNAME(created_at) as day, COUNT(*) as total')
     ->whereNotNull('created_at')
@@ -51,6 +57,8 @@ foreach ($usersPerDay as $day) {
     $data[] = $day->total;
 }
 
+
+// post
 $postPerDay = DB::table('posts')
     ->selectRaw('DAYNAME(created_at) as day, COUNT(*) as total')
     ->whereNotNull('created_at')
@@ -67,10 +75,26 @@ foreach ($postPerDay as $post) {
         $postLebal[] = $post->day;
 }
 
+    // comments
 
+    $commentPerDay = DB::table('comments')
+    ->selectRaw('DAYNAME(created_at) as day, COUNT(*) as total')
+    ->whereNotNull('created_at')
+    ->groupBy('day')
+    ->orderByRaw('FIELD(day, "Monday", "Tuesday", "Wedneday", "Thursday", "Friday", "Saturday", "Sunday")')
+    ->get();
+
+
+    $commentLabel = [];
+    $commentData = [];
+
+
+foreach ($commentPerDay as $comment) {
+    $commentLabel[] = $comment->day;
+    $commentData[] = $comment->total;}
 
         $users = User::orderBy('last_active_at', 'DESC')->get();
-        return view('Dashboard' , ['users'=> $users , 'usersPerDay'=>$data, "label"=>$label, 'postLabel'=> $postLebal, 'postData' => $postData]);
+        return view('Dashboard' , ['users'=> $users , 'usersPerDay'=>$data, "label"=>$label, 'postLabel'=> $postLebal, 'postData' => $postData, 'commentLabel' => $commentLabel, 'commentData' => $commentData]);
     }
 
 
