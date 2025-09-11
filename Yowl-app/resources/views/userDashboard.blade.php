@@ -30,65 +30,14 @@
 
                     <!-- edit -->
                     <div class="flex justify-end gap-2 mt-3">
-                        <button command="show-modal" commandfor="{{'edit-'.$post->id}}" class="ml-65 cursor-pointer">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="size-6 text-blue-500">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
-                            </svg>
-                        </button>
+                        <a href="{{ route('posts.edit', $post->id) }}" class="ml-65 cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" class="size-6 text-blue-500">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+        </svg>
+    </a>
 
-                        <!-- <button class="rounded-md bg-gray-950/5 px-2.5 py-1.5 text-sm font-semibold text-gray-900 hover:bg-gray-950/10">Open dialog</button> -->
-                        <el-dialog>
-                            <dialog id="{{ 'edit-' . $post->id }}" aria-labelledby="edit-title"
-                                class="fixed inset-0 size-auto max-h-none max-w-none overflow-y-auto bg-transparent backdrop:bg-transparent">
-                                <el-dialog-backdrop
-                                    class="fixed inset-0 bg-gray-500/75 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in"></el-dialog-backdrop>
-
-                                <div tabindex="0"
-                                    class="flex min-h-full items-end justify-center p-4 text-center focus:outline-none sm:items-center sm:p-0">
-                                    <el-dialog-panel
-                                        class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-
-                                        <!--  FORM -->
-                                        <form method="POST" action="{{ route('posts.update', $post->id) }}"
-                                            class="max-w-sm mx-auto mt-5">
-                                            @csrf
-                                            @method('PUT')
-                                            <div class="mb-5">
-                                                <label for="title"
-                                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
-                                                <input type="text" name="title" id="title"
-                                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                                    autocomplete="off" value="{{ $post->title }}" />
-                                            </div>
-
-                                            <div class="mb-5">
-                                                <label for="url"
-                                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">URL</label>
-                                                <input type="text" name="url" id="url" required
-                                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                                    autocomplete="off" value="{{ $post->url }}" />
-                                            </div>
-
-                                            <!--  BOUTONS  -->
-                                            <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-                                                <button type="submit"
-                                                    class="cursor-pointer inline-flex w-full justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-green-500 sm:ml-3 sm:w-auto">
-                                                    Save
-                                                </button>
-                                                <button type="button" command="close" commandfor="edit"
-                                                    class="cursor-pointer mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-xs inset-ring inset-ring-gray-300 hover:bg-red-700 hover:text-white sm:mt-0 sm:w-auto">
-                                                    Cancel
-                                                </button>
-                                            </div>
-                                        </form>
-                                        <!-- BOUTONS  -->
-
-                                    </el-dialog-panel>
-                                </div>
-                            </dialog>
-                        </el-dialog>
                         <!-- edit -->
 
                         <!-- delete -->

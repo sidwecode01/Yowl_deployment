@@ -42,7 +42,10 @@ Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show')
 Route::post('/posts/{post}/comments', [CommentController::class, 'store'])->name('comments.store');
 Route::delete('/deleteComment/{id}', [CommentController::class, 'destroy'])->name('comments.destroy');
 
+Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
+
 Route::put('/update/{post}', [PostController::class, 'update'])->name('posts.update');
+
 
 Route::middleware([
     'auth:sanctum',

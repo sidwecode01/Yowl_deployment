@@ -24,6 +24,7 @@
       </p>
 
       <li>
+        @auth
         <button command="show-modal" commandfor="dialog" class="flex hover:border-l-6 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-blue-100 hover:border-blue-400 hover:text-blue-400">
         <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
 
@@ -70,6 +71,7 @@
           </div>
         </dialog>
       </el-dialog>
+      @endauth
 
       </li>
 
