@@ -108,9 +108,18 @@
                                 </td>
                                 <!-- <td class="px-6 py-3 text-center"><button class="text-3xl text-blue-500 w-10 h-10 rounded-xl " ><i class='bx bx-show'></i></button></td> -->
                                 <!-- <td class="px-6 py-3 text-center"><a href="update/{{ $user->id }}"><button command="show-modal" commandfor="dialog" class="text-3xl text-green-500 w-10 h-10 rounded-xl " ><i class='bx bxs-edit-alt'></i></button></a></td>  -->
-                                <td class="px-6 py-3 text-center"><a href="delete/{{ $user->id }}"><button
-                                            class="text-3xl text-red-500 w-10 h-10 rounded-xl "><i
-                                                class='bx bx-trash'></i></button></a></td>
+                                <td class="px-6 py-3 text-center">
+
+                                <form action="{{ route('delete', $user->id) }}" method="POST" onsubmit="return confirm('Confirmer la suppression ?')">
+                                        @csrf
+                                        @method('DELETE')
+
+                                         <button  type="submit" class="text-3xl text-red-500 w-10 h-10 rounded-xl ">
+                                        <i class='bx bx-trash'></i>
+                                    </button>
+                                </form>
+
+                                </td>
                             </tr>
                         @endforeach
                         <!-- here -->

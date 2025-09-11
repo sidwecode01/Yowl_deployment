@@ -65,27 +65,27 @@
                 <h2 class="text-lg font-bold mb-4 text-blue-600">Dashboard</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                     <div class="bg-white p-4 rounded-xl shadow">
-                        <p class="text-gray-600">Customers connected today</p>
-                        <p class="text-2xl font-bold">+34%</p>
+                        <p class="text-gray-600">Customers per day</p>
+                        <p class="text-2xl font-bold">Total : {{$totalUser}}</p>
                         <!-- <div class="mt-2 h-2 bg-blue-100 rounded"></div> -->
                         <canvas id="line-chart" role="img"></canvas>
                     </div>
                     <div class="bg-white p-4 rounded-xl shadow">
-                        <p class="text-gray-600">Products</p>
-                        <p class="text-2xl font-bold">+34%</p>
+                        <p class="text-gray-600">Posts per day</p>
+                        <p class="text-2xl font-bold">Total : {{$totalPost}}</p>
                         <!-- <div class="mt-2 h-2 bg-blue-100 rounded"></div> -->
                         <canvas id="line-chart2" role="img"></canvas>
                         <!-- here -->
                     </div>
                     <div class="bg-white p-4 rounded-xl shadow">
-                        <p class="text-gray-600">Customers</p>
-                        <p class="text-2xl font-bold">86%</p>
+                        <p class="text-gray-600">Likes per day</p>
+                        <p class="text-2xl font-bold">Total : {{$totalLike}}</p>
                         <!-- <div class="mt-2 h-2 bg-blue-100 rounded"></div> -->
                         <canvas id="line-chart3"></canvas>
                     </div>
                     <div class="bg-white p-4 rounded-xl shadow">
-                        <p class="text-gray-600">Comments</p>
-                        <p class="text-2xl font-bold">86%</p>
+                        <p class="text-gray-600">Comments per day</p>
+                        <p class="text-2xl font-bold">Total : {{$totalComment}}</p>
                         <!-- <div class="mt-2 h-2 bg-blue-100 rounded"></div> -->
                         <canvas id="line-chart4"></canvas>
                     </div>
@@ -161,62 +161,38 @@
 
 
             const data2 = {
-                labels: [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday",
-                    "Sunday"
-                ],
+                labels:@json($postLabel),
 
                 datasets: [{
                     label: "Test",
-                    backgroundColor: "rgba(245, 63, 135, 0.1)",
+                    backgroundColor: "rgba(245, 63, 135, 1)",
                     borderColor: "rgba(245, 63, 135, 1)",
-                    data: [1, 26, 15, 74, 56, 67, 75],
+                    data: @json($postData),
                     fill: true,
 
                 }]
             };
 
             const data3 = {
-                labels: [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday",
-                    "Sunday"
-                ],
+                labels:  @json($likeLabel),
                 datasets: [{
                     label: "Customers",
                     backgroundColor: 'rgba(47, 214, 135, 0.4)',
                     borderColor: 'rgba(47, 214, 135, 1)',
-                    data: [1, 2, 7, 8, 3, 0, 9],
+                    data: @json($likeData),
                     fill: true,
 
                 }]
             };
 
             const data4 = {
-                labels: [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday",
-                    "Sunday"
-                ],
+                labels: @json($commentLabel),
 
                 datasets: [{
                     label: 'Sidyellow',
                     backgroundColor: 'rgba(249, 102, 14, 0.4)',
                     borderColor: 'rgba(249, 102, 14, 0.67)',
-                    data: [1, 3, 5, 8, 1, 0, 9],
+                    data: @json($commentData),
                     fill: true,
 
 
@@ -260,7 +236,7 @@
 
             //  courbe3
             const chart3 = new Chart(courbe3, {
-                type: 'doughnut',
+                type: 'bar',
                 data: data3,
                 options: {
                     elements: {
@@ -277,7 +253,7 @@
             //  courbe4
 
             const chart4 = new Chart(courbe4, {
-                type: 'line',
+                type: 'bar',
                 data: data4,
                 options: {
                     elements: {

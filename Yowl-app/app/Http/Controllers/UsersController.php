@@ -32,7 +32,8 @@ class UsersController extends Controller
     }
 
     public function deleteUser($id){
-        $oneUse = User::find($use)->first();
+
+        $oneUse = User::find($id)->first();
         $oneUse->delete();
         return redirect('/Dash')->with('status' , 'Delete successfull');
     }
@@ -43,6 +44,7 @@ class UsersController extends Controller
         $totalUser = User::count();
         $totalPost = Post::count();
         $totalComment = Comment::count();
+        $totalLike = DB::table('likes')->count();
 
 
         // user
@@ -98,6 +100,24 @@ foreach ($commentPerDay as $comment) {
     $commentLabel[] = $comment->day;
     $commentData[] = $comment->total;}
 
+    // like
+
+     $likePerDay = DB::table('likes')
+    ->selectRaw('DAYNAME(created_at) as day, COUNT(*) as total')
+    ->whereNotNull('created_at')
+    ->groupBy('day')
+    ->orderByRaw('FIELD(day, "Monday", "Tuesday", "Wedneday", "Thursday", "Friday", "Saturday", "Sunday")')
+    ->get();
+
+
+    $likeLabel = [];
+    $likeData = [];
+
+
+foreach ($likePerDay as $like) {
+    $likeLabel[] = $like->day;
+    $likeData[] = $like->total;}
+
         $users = User::orderBy('last_active_at', 'DESC')->get();
         return view('Dashboard' , ['users'=> $users,
                                  'usersPerDay'=>$data,
@@ -108,7 +128,10 @@ foreach ($commentPerDay as $comment) {
                                       'commentData' => $commentData,
                                     'totalUser' => $totalUser,
                                     'totalPost' => $totalPost,
-                                    'totalComment' => $totalComment
+                                    'totalComment' => $totalComment,
+                                    'likeLabel' => $likeLabel,
+                                    'likeData' => $likeData,
+                                    'totalLike' => $totalLike
                                     ]);
     }
 
