@@ -70,6 +70,8 @@ Route::middleware([
 
     Route::get('/productDash', PostController::class .'@indexDash')->name('products');
 
+    Route::delete('/deleteUser/{id}', [UsersController::class , 'deleteUser'])->name('delete');
+
 
     // like
 Route::post('/posts/{post}/like', [LikeController::class, 'toggle'])->name('posts.toggle-like');

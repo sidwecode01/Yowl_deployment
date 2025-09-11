@@ -31,7 +31,7 @@ class UsersController extends Controller
         return view('useDash', ['allUser'=>$allUser , 'online'=> $online]);
     }
 
-    public function delete(User $use){
+    public function deleteUser($id){
         $oneUse = User::find($use)->first();
         $oneUse->delete();
         return redirect('/Dash')->with('status' , 'Delete successfull');
