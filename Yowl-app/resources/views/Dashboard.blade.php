@@ -21,7 +21,7 @@
     <section class="flex flex-col md:flex-row h-auto min-h-screen bg-gray-50">
         <!-- bar vertical -->
         <div class="py-4 gap-8 items-center w-64 bg-blue-600 text-white flex flex-col">
-            <div><img class="w-20 h-16" src="../Logo/Logo-removebg-preview - Modifié.png" alt=""></div>
+            <div><img class="w-20 h-16" src="../Logo/whiteLogos.png" alt=""></div>
             <div class="  p-4 w-full  bg-white"></div>
             <div class="text-[clamp(1rem,2vw,2rem)]"><a href="{{ route('dash') }}"><i
                         class='bx bxs-dashboard text-xl text-[clamp(1rem,2vw,2rem)]'></i><span
@@ -115,13 +115,18 @@
                             <tbody>
                                 @foreach ($users as $user)
                                     <tr class="border-t ">
-                                        <td class="px-6 py-3">{{ $user->name }}</td>
-                                        <td class="px-6 py-3">{{ $user->email }}</td>
-                                        <td class="px-6 py-3">
-                                            <span
-                                                class=" p-2 rounded-full bg-{{ $user->last_active_at >= now()->subMinutes(2) ? 'green' : 'red' }}-500">
-                                                {{ $user->last_active_at >= now()->subMinutes(10) ? 'Online' : 'Offline' }}
-                                            </span>
+                                        <td class="px-6 py-3 text-xl font-(family-name:--my-font)">{{ $user->name }}</td>
+                                        <td class="px-6 py-3 text-xl">{{ $user->email }}</td>
+                                        <td class="px-6 py-3 text-xl">
+                                            <span class="inline-flex items-center bg-{{ $user->last_active_at >= now()->subMinutes(2) ? 'green' : 'red' }}-100 text-{{ $user->last_active_at >= now()->subMinutes(2) ? 'green' : 'red' }}-800 text-xl font-medium px-2.5 py-0.5 rounded-full dark:bg-{{ $user->last_active_at >= now()->subMinutes(2) ? 'green' : 'red' }}-900 dark:text-{{ $user->last_active_at >= now()->subMinutes(2) ? 'green' : 'red' }}-300">
+                <span class="w-2 h-2 me-1 bg-{{ $user->last_active_at >= now()->subMinutes(2) ? 'green' : 'red'}}-500 rounded-full"></span>
+
+                {{ $user->last_active_at >= now()->subMinutes(10) ? 'Online' : 'Offline' }}
+            </span>
+
+
+
+
                                         </td>
                                     </tr>
                                 @endforeach
@@ -164,7 +169,7 @@
                 labels:@json($postLabel),
 
                 datasets: [{
-                    label: "Test",
+                    label: "Posts",
                     backgroundColor: "rgba(245, 63, 135, 1)",
                     borderColor: "rgba(245, 63, 135, 1)",
                     data: @json($postData),
@@ -176,7 +181,7 @@
             const data3 = {
                 labels:  @json($likeLabel),
                 datasets: [{
-                    label: "Customers",
+                    label: "Likes",
                     backgroundColor: 'rgba(47, 214, 135, 0.4)',
                     borderColor: 'rgba(47, 214, 135, 1)',
                     data: @json($likeData),
@@ -189,7 +194,7 @@
                 labels: @json($commentLabel),
 
                 datasets: [{
-                    label: 'Sidyellow',
+                    label: 'Comments',
                     backgroundColor: 'rgba(249, 102, 14, 0.4)',
                     borderColor: 'rgba(249, 102, 14, 0.67)',
                     data: @json($commentData),
