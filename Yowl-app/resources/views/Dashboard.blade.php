@@ -21,7 +21,7 @@
     <section class="flex flex-col md:flex-row h-auto min-h-screen bg-gray-50">
         <!-- bar vertical -->
         <div class="py-4 gap-8 items-center w-64 bg-blue-600 text-white flex flex-col">
-            <div><img class="w-20 h-16" src="../Logo/Logo-removebg-preview - Modifié.png" alt=""></div>
+            <div><img class="w-20 h-16" src="../Logo/whiteLogos.png" alt=""></div>
             <div class="  p-4 w-full  bg-white"></div>
             <div class="text-[clamp(1rem,2vw,2rem)]"><a href="{{ route('dash') }}"><i
                         class='bx bxs-dashboard text-xl text-[clamp(1rem,2vw,2rem)]'></i><span
@@ -164,7 +164,7 @@
                 labels:@json($postLabel),
 
                 datasets: [{
-                    label: "Test",
+                    label: "Posts",
                     backgroundColor: "rgba(245, 63, 135, 1)",
                     borderColor: "rgba(245, 63, 135, 1)",
                     data: @json($postData),
@@ -176,7 +176,7 @@
             const data3 = {
                 labels:  @json($likeLabel),
                 datasets: [{
-                    label: "Customers",
+                    label: "Likes",
                     backgroundColor: 'rgba(47, 214, 135, 0.4)',
                     borderColor: 'rgba(47, 214, 135, 1)',
                     data: @json($likeData),
@@ -189,7 +189,7 @@
                 labels: @json($commentLabel),
 
                 datasets: [{
-                    label: 'Sidyellow',
+                    label: 'Comments',
                     backgroundColor: 'rgba(249, 102, 14, 0.4)',
                     borderColor: 'rgba(249, 102, 14, 0.67)',
                     data: @json($commentData),
