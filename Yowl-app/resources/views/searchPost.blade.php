@@ -26,7 +26,7 @@
                 <li>
                     @auth
                         <button command="show-modal" commandfor="dialog"
-                            class="flex hover:border-l-6 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-blue-100 hover:border-blue-400 hover:text-blue-400">
+                            class="flex hover:border-l-6 px-4 py-2 lg:text-sm 2xl:text-2xl font-medium text-gray-900 hover:bg-blue-100 hover:border-blue-400 hover:text-blue-400">
                             <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
 
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -124,6 +124,12 @@
 
 
 <!-- Barre de recherche -->
+
+
+
+
+
+
 <div class="mb-6 flex justify-center">
     <form action="{{ route('search') }}" method="GET" class="flex w-full max-w-md">
         <input type="text" name="search"
