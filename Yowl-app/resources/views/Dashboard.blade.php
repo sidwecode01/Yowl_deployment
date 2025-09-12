@@ -115,13 +115,18 @@
                             <tbody>
                                 @foreach ($users as $user)
                                     <tr class="border-t ">
-                                        <td class="px-6 py-3">{{ $user->name }}</td>
-                                        <td class="px-6 py-3">{{ $user->email }}</td>
-                                        <td class="px-6 py-3">
-                                            <span
-                                                class=" p-2 rounded-full bg-{{ $user->last_active_at >= now()->subMinutes(2) ? 'green' : 'red' }}-500">
-                                                {{ $user->last_active_at >= now()->subMinutes(10) ? 'Online' : 'Offline' }}
-                                            </span>
+                                        <td class="px-6 py-3 text-xl font-(family-name:--my-font)">{{ $user->name }}</td>
+                                        <td class="px-6 py-3 text-xl">{{ $user->email }}</td>
+                                        <td class="px-6 py-3 text-xl">
+                                            <span class="inline-flex items-center bg-{{ $user->last_active_at >= now()->subMinutes(2) ? 'green' : 'red' }}-100 text-{{ $user->last_active_at >= now()->subMinutes(2) ? 'green' : 'red' }}-800 text-xl font-medium px-2.5 py-0.5 rounded-full dark:bg-{{ $user->last_active_at >= now()->subMinutes(2) ? 'green' : 'red' }}-900 dark:text-{{ $user->last_active_at >= now()->subMinutes(2) ? 'green' : 'red' }}-300">
+                <span class="w-2 h-2 me-1 bg-{{ $user->last_active_at >= now()->subMinutes(2) ? 'green' : 'red'}}-500 rounded-full"></span>
+
+                {{ $user->last_active_at >= now()->subMinutes(10) ? 'Online' : 'Offline' }}
+            </span>
+
+
+
+
                                         </td>
                                     </tr>
                                 @endforeach
