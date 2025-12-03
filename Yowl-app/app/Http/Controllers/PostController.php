@@ -68,10 +68,10 @@ class PostController extends Controller
 
         Post::create([
             'user_id'     => auth()->id(),
-            'url'         => $request->url,
+            'posts_url'         => $request->url,
             'title'       => $request->title ?? null,
             'description' => $meta['description'] ?? null,
-            'image'       => $meta['image'] ?? null,
+            'chemin_image'       => $meta['image'] ?? null,
         ]);
 
         return redirect()->back()->with('success', 'Post created');
@@ -83,8 +83,6 @@ class PostController extends Controller
             'url' => 'required|url',
             'title' => 'required|string|max:50',
         ]);
-
-
 
         $post->update($request->all());
 
@@ -99,7 +97,7 @@ class PostController extends Controller
 
     public function show(Post $post)
 {
-    // Charge les commentair
+    // Charge les commentaires
     $post->load('comments.user');
 
     return view('posts.show', compact('post'));

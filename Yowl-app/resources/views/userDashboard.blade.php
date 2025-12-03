@@ -22,8 +22,8 @@
     <div class="flex flex-col justify-between mt-24 h-[400px]  max-w-sm p-6 bg-gray-200 border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
 
                     <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $post->title }}</h5>
-                    @if ($post->image)
-                        <img src="{{ $post->image }}" alt="preview"
+                    @if ($post->chemin_image)
+                        <img src="{{ $post->chemin_image }}" alt="preview"
                             class="w-full h-[200px] object-cover rounded mt-2" />
                     @endif
 

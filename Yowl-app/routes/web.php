@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
-// use App\Http\Controllers\CommentController;
 use App\Http\Controllers\LikeController;
 
 /*
@@ -44,6 +43,7 @@ Route::get('/search', [PostController::class, 'search'])->name('search');
 
 Route::get('/Home', [PostController::class, 'index'])->name('home');
 Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+// Route::get('/posts', [PostController::class, 'store'])->name('posts.store');
 Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
 Route::post('/posts/{post}/comments', [CommentController::class, 'store'])->name('comments.store');
 Route::delete('/deleteComment/{id}', [CommentController::class, 'destroy'])->name('comments.destroy');

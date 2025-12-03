@@ -225,14 +225,14 @@
                         class="font-bold lg:text-2xl 2xl:text-22xl text-blue-600 md:text-2xl">
                         {{ $post->title }}
                     </a><br>
-                    @if ($post->image)
+                    @if ($post->chemin_image)
                         <a href="{{ route('posts.show', $post) }}">
-                            <img src="{{ $post->image }}" alt="preview"
+                            <img src="{{ $post->chemin_image }}" alt="preview"
                                 class="2xl:w-full 2xl:h-50 object-cover rounded mt-2">
                         </a>
                     @endif
-                    <a href="{{ $post->url }}" class=" text-blue-600 underline mt-4 line-clamp-2 md:text-xl">
-                        {{ $post->url }}
+                    <a href="{{ $post->posts_url }}" class=" text-blue-600 underline mt-4 line-clamp-2 md:text-xl">
+                        {{ $post->posts_url }}
                     </a><br>
                     <p class=" mt-3">Author:
                         <span class=" text-2xl font-semibold text-red-400">
@@ -258,7 +258,6 @@
                                                     class="bx bxs-like text-[30px]
                     {{ auth()->check() && auth()->user()->likedPosts->contains($post->id) ? 'text-blue-500' : '' }}">
                                                 </i>
-                                                <p class="text-[1.3em]">{{ $post->likedByUsers->count() }}</p>
                                             </button>
                                         </form>
 
