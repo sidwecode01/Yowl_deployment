@@ -30,7 +30,7 @@
             @endif
 
             <p class="text-gray-600 mb-2 line-clamp-6">{{ $post->description }}</p>
-            <a href="{{ $post->url }}" target="_blank" class="text-blue-500 underline">
+            <a href="{{ $post->url }}" target="_blank"  class=" text-blue-500 underline">
                 Show post site
             </a>
         </div>
