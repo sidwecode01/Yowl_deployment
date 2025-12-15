@@ -65,13 +65,15 @@ class PostController extends Controller
         ]);
 
         $meta = UrlPreview::getMetaTags($request->url);
-
+        
+        
+        // dd($meta);
         Post::create([
             'user_id'     => auth()->id(),
-            'posts_url'         => $request->url,
+            'posts_url'   => $request->url,
             'title'       => $request->title ?? null,
             'description' => $meta['description'] ?? null,
-            'chemin_image'       => $meta['image'] ?? null,
+            'chemin_image'=> $meta['image'] ?? null,
         ]);
 
         return redirect()->back()->with('success', 'Post created');
