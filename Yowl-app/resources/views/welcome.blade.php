@@ -234,67 +234,60 @@
 
 
             @foreach ($posts as $post)
-            <div
-                class="md:w-150 md:m-auto md:mb-9 lg:m-auto lg:w-130 lg:mt-5 lg:mb-2 bg-white shadow rounded-2xl p-4 mb-4 2xl:w-200 lg:w-100 2xl:ml-10 2xl:shadow-gray-400 lg:shadow-gray-400 hover:shadow-blue-800 transition delay-150 duration-1000 ease-in-out hover:scale-105">
-                <a href="{{ route('posts.show', $post) }}" target="_blank"
-                    class="font-bold lg:text-2xl 2xl:text-22xl text-blue-600 md:text-2xl">
-                    {{ $post->title }}
-                </a><br>
+            <div class="bg-white dark:bg-gray-900 rounded-3xl shadow-lg hover:shadow-xl transition-transform duration-300 ease-out transform hover:-translate-y-1 hover:scale-105 overflow-hidden mb-6 md:mx-auto md:w-3/4 lg:w-2/3 2xl:w-1/2">
+
+                <!-- Image -->
                 @if ($post->chemin_image)
-                <a href="{{ route('posts.show', $post) }}">
+                <a href="{{ route('posts.show', $post) }}" target="_blank">
                     <img src="{{ $post->chemin_image }}" alt="preview"
-                        class="2xl:w-full 2xl:h-50 object-cover rounded mt-2">
+                        class="w-full h-64 md:h-80 object-cover transition duration-500 hover:scale-105">
                 </a>
                 @endif
-                <a href="{{ $post->posts_url }}" class="text-xs text-blue-600 underline mt-4 line-clamp-2 ">
-                    {{ $post->posts_url }}
-                </a><br>
-                <p class=" mt-3">Author:
-                    <span class=" text-xs font-semibold text-red-400">
-                        {{ $post->user->name }}
-                    </span>
-                </p>
 
-                <p class=" text-gray-500">{{ $post->created_at->diffForHumans() }}</p>
+                <div class="p-5 space-y-3">
 
-                <div class="flex justify-end mt-2">
+                    <!-- Title -->
+                    <a href="{{ route('posts.show', $post) }}" target="_blank"
+                        class="block text-2xl md:text-3xl font-bold text-indigo-600 hover:text-indigo-500 transition">
+                        {{ $post->title }}
+                    </a>
 
-                    <!-- like -->
+                    <!-- URL -->
+                    <a href="{{ $post->posts_url }}" class="text-sm text-indigo-500 underline line-clamp-2">
+                        {{ $post->posts_url }}
+                    </a>
 
-
-                    <div class="flex justify-between mt-2 px-4 shadow-md w-full">
-
-
-                        <form action="{{ route('posts.toggle-like', $post) }}" method="POST">
-                            @csrf
-                            <button type="submit"
-                                class="flex items-center font-bold cursor-pointer gap-2">
-                                <i
-                                    class="bx bxs-like text-[30px]
-                    {{ auth()->check() && auth()->user()->likedPosts->contains($post->id) ? 'text-blue-500' : '' }}">
-                                </i>
-                            </button>
-                        </form>
-                        
-                        <!-- like -->
-
-                        <button
-                            class="flex items-center font-bold cursor-pointer">
-                            <a href="{{ route('posts.show', $post) }}">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                    class="size-7">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
-                                </svg></a>
-                            <p class="">{{ $post->comments->count() }}</p>
-                        </button>
+                    <!-- Author + Date -->
+                    <div class="flex items-center justify-between text-gray-500 text-sm">
+                        <span>Author: <span class="font-semibold text-red-400">{{ $post->user->name }}</span></span>
+                        <span>{{ $post->created_at->diffForHumans() }}</span>
                     </div>
 
+                    <!-- Actions -->
+                    <div class="flex items-center justify-between mt-3 border-t border-gray-200 pt-3">
 
+                        <!-- Like -->
+                        <form action="{{ route('posts.toggle-like', $post) }}" method="POST" class="flex items-center gap-2">
+                            @csrf
+                            <button type="submit" class="flex items-center gap-1 text-gray-500 hover:text-blue-500 transition">
+                                <i class="bx bxs-like text-2xl {{ auth()->check() && auth()->user()->likedPosts->contains($post->id) ? 'text-blue-500' : '' }}"></i>
+                                <span class="text-sm">{{ $post->likes_count ?? 0 }}</span>
+                            </button>
+                        </form>
+
+                        <!-- Comment -->
+                        <a href="{{ route('posts.show', $post) }}" class="flex items-center gap-2 text-gray-500 hover:text-indigo-500 transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+                            </svg>
+                            <span class="text-sm">{{ $post->comments->count() }}</span>
+                        </a>
+
+                    </div>
                 </div>
             </div>
             @endforeach
+
 
         </div>
         <div
