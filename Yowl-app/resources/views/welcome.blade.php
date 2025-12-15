@@ -271,8 +271,9 @@
                             @csrf
                             <button type="submit" class="flex items-center gap-1 text-gray-500 hover:text-blue-500 transition">
                                 <i class="bx bxs-like text-2xl {{ auth()->check() && auth()->user()->likedPosts->contains($post->id) ? 'text-blue-500' : '' }}"></i>
-                                <span class="text-sm">{{ $post->likes_count ?? 0 }}</span>
+                                <span class="text-sm">{{ $post->liked_by_users_count ?? 0 }}</span>
                             </button>
+                            
                         </form>
 
                         <!-- Comment -->
